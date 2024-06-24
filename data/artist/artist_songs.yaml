@@ -1,0 +1,27 @@
+- feature: artist_songs
+  story: get_all_songs_by_order
+  title: 获取歌手按热门排序的全部歌曲
+  request:
+    method: get
+    url: http://localhost:3000/artist/songs
+    params:
+      id: 222871
+      order: hot
+      limit: 50
+      offset: 0
+  validate:
+    code: 200
+
+- feature: artist_songs
+  story: get_all_songs_by_time
+  title: 获取歌手按时间排序的全部歌曲
+  request:
+    method: get
+    url: http://localhost:3000/artist/songs
+    params:
+      id: 222871
+      order: time
+      limit: 50
+      offset: 0
+  validate:
+    code: 200

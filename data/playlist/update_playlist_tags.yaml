@@ -1,0 +1,11 @@
+- feature: test_playlist
+  story: update_playlist_tags
+  title: 更新歌单标签
+  request:
+    method: get
+    url: http://localhost:3000/playlist/tags/update
+    params:
+      id: 10178922332
+      tags: 华语
+  validate:
+    code: 200

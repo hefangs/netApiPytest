@@ -1,0 +1,23 @@
+- feature: song_url_v1
+  story: get_single_music_url_exhigh
+  title: 获取单个音乐的URL（极高音质）
+  request:
+    method: get
+    url: http://localhost:3000/song/url/v1
+    params:
+      id: 406089317
+      level: exhigh
+  validate:
+    code: 200
+
+- feature: song_url_v1
+  story: get_multiple_music_urls_lossless
+  title: 获取多个音乐的URL（无损音质）
+  request:
+    method: get
+    url: http://localhost:3000/song/url/v1
+    params:
+      id: 406089317,29723016
+      level: lossless
+  validate:
+    code: 200

@@ -1,0 +1,12 @@
+- feature: user
+  story: get_event_msg
+  title: 获取动态消息
+  request:
+    method: get
+    url: http://localhost:3000/event
+    params:
+      pagesize: 20
+      lasttime: -1
+  validate:
+    code: 200
+

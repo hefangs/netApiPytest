@@ -1,0 +1,22 @@
+- feature: check_music_availability
+  story: check_single_music_availability
+  title: 检查单个音乐是否可用
+  request:
+    method: get
+    url: http://localhost:3000/check/music
+    params:
+      id: 29723016
+  validate:
+    code: 200
+
+- feature: check_music_availability
+  story: check_music_availability_with_bitrate
+  title: 检查单个音乐是否可用（999000 码率）
+  request:
+    method: get
+    url: http://localhost:3000/check/music
+    params:
+      id: 29723016
+      br: 999000
+  validate:
+    code: 200

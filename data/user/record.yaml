@@ -1,0 +1,34 @@
+- feature: record
+  story: get_user_play_record_default
+  title: 获取用户播放记录
+  request:
+    method: get
+    url: http://localhost:3000/user/record
+    params:
+      uid: ${extract(uid)} # 不传type 返回allData
+  validate:
+    code: 200
+
+- feature: record
+  story: get_user_play_record_week
+  title: 获取用户播放记录
+  request:
+    method: get
+    url: http://localhost:3000/user/record
+    params:
+      uid: ${extract(uid)}
+      type: 1  # 只返回 weekData
+  validate:
+    code: 200
+
+- feature: record
+  story: get_user_play_record_all
+  title: 获取用户全部播放记录
+  request:
+    method: get
+    url: http://localhost:3000/user/record
+    params:
+      uid: ${extract(uid)}
+      type: 0  # 返回 allData
+  validate:
+    code: 200

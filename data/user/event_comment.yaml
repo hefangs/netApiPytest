@@ -1,0 +1,11 @@
+- feature: user
+  story: user_event_comment
+  title: 获取动态评论
+  request:
+    method: get
+    url: http://localhost:3000/comment/event
+    params:
+      threadId: ${extract(thread_id)}
+  validate:
+    code: 200
+

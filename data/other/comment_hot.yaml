@@ -1,0 +1,53 @@
+- feature: hot_comments
+  story: get_hot_comments_default
+  title: 获取热门评论（默认）
+  request:
+    method: get
+    url: http://localhost:3000/comment/hot
+    params:
+      id: 16375205
+      type: 0
+  validate:
+    code: 200
+
+- feature: hot_comments
+  story: get_hot_comments_with_limit
+  title: 获取热门评论（限制数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/hot
+    params:
+      id: 16375205
+      type: 0
+      limit: 20
+  validate:
+    code: 200
+
+- feature: hot_comments
+  story: get_hot_comments_with_offset
+  title: 获取热门评论（分页 - 偏移数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/hot
+    params:
+      id: 16375205
+      type: 0
+      limit: 20
+      offset: 0
+  validate:
+    code: 200
+
+- feature: hot_comments
+  story: get_hot_comments_all_params
+  title: 获取热门评论（全部参数）
+  request:
+    method: get
+    url: http://localhost:3000/comment/hot
+    params:
+      id: 16375205
+      type: 0
+      limit: 20
+      offset: 20
+      before:
+  validate:
+    code: 200

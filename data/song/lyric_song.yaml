@@ -1,0 +1,10 @@
+- feature: lyric
+  story: get_lyric
+  title: 获取歌词
+  request:
+    method: get
+    url: http://localhost:3000/lyric
+    params:
+      id: 258498
+  validate:
+    code: 200

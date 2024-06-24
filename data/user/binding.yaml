@@ -1,0 +1,11 @@
+- feature: user
+  story: user_binding
+  title: 获取用户绑定信息
+  request:
+    method: get
+    url: http://localhost:3000/user/binding
+    params:
+      uid: ${extract(uid)}
+  validate:
+    code: 200
+

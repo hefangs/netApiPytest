@@ -1,0 +1,46 @@
+- feature: new_comments
+  story: get_new_comments_recommend_sort
+  title: 获取新版评论（按推荐排序 - 分页）
+  request:
+    method: get
+    url: http://localhost:3000/comment/new
+    params:
+      id: 1873321491
+      type: 0
+      sortType: 1
+      pageSize: 20
+      pageNo: 1
+  validate:
+    code: 200
+
+- feature: new_comments
+  story: get_new_comments_hot_sort
+  title: 获取新版评论（按热度排序 - 分页）
+  request:
+    method: get
+    url: http://localhost:3000/comment/new
+    params:
+      id: 1873321491
+      type: 0
+      sortType: 2
+      pageSize: 20
+      pageNo: 1
+  validate:
+    code: 200
+
+
+- feature: new_comments
+  story: get_new_comments_time_sort_with_cursor
+  title: 获取新版评论（按时间排序 - 分页）
+  request:
+    method: get
+    url: http://localhost:3000/comment/new
+    params:
+      id: 1407551413
+      type: 0
+      sortType: 3
+      cursor:
+      pageSize: 20
+      pageNo: 1
+  validate:
+    code: 200

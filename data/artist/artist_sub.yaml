@@ -1,0 +1,23 @@
+- feature: artist
+  story: artist_sub
+  title: 收藏歌手
+  request:
+    method: get
+    url: http://localhost:3000/artist/sub
+    params:
+      id: 6075
+      t: 1
+  validate:
+    code: 200
+
+- feature: artist
+  story: artist_sub
+  title: 取消收藏歌手
+  request:
+    method: get
+    url: http://localhost:3000/artist/sub
+    params:
+      id: 6075
+      t: 0
+  validate:
+    code: 200

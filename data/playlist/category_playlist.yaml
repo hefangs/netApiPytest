@@ -1,0 +1,8 @@
+- feature: playlist_catlist
+  story: get_playlist_categories
+  title: 获取歌单分类
+  request:
+    method: get
+    url: http://localhost:3000/playlist/catlist
+  validate:
+    code: 200

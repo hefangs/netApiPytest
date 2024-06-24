@@ -1,0 +1,13 @@
+- feature: user
+  story: user_comment_history
+  title: 获取用户历史评论
+  request:
+    method: get
+    url: http://localhost:3000/user/comment/history
+    params:
+      uid: ${extract(uid)}
+      limit:
+      time:
+  validate:
+    code: 200
+

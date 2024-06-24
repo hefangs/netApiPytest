@@ -1,0 +1,23 @@
+- feature: user
+  story: follow_user
+  title: 关注用户
+  request:
+    method: get
+    url: http://localhost:3000/follow
+    params:
+      id: 725130
+      t: 1  # 关注 (1: 关注, 0: 取消关注)
+  validate:
+    code: 200
+
+- feature: user
+  story: unfollow_user
+  title: 取消关注用户
+  request:
+    method: get
+    url: http://localhost:3000/follow
+    params:
+      id: 725130
+      t: 0  # 取消关注 (1: 关注, 0: 取消关注)
+  validate:
+    code: 200

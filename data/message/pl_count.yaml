@@ -1,0 +1,8 @@
+- feature: message
+  story: pl_count
+  title: 私信和通知
+  request:
+    method: get
+    url: http://localhost:3000/pl/count
+  validate:
+    code: 200

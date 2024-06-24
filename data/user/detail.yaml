@@ -1,0 +1,11 @@
+- feature: user
+  story: user_detail
+  title: 获取用户详情
+  request:
+    method: get
+    url: http://localhost:3000/user/detail
+    params:
+      uid: ${extract(uid)}
+  validate:
+    code: 200
+

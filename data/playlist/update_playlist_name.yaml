@@ -1,0 +1,11 @@
+- feature: test_playlist
+  story: update_playlist_name
+  title: 更新歌单名称
+  request:
+    method: get
+    url: http://localhost:3000/playlist/name/update
+    params:
+      id: 10178922332
+      name: 我的新歌单
+  validate:
+    code: 200

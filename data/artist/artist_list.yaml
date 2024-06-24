@@ -1,0 +1,14 @@
+- feature: artist_list
+  story: get_all_artists
+  title: 获取全部歌手
+  request:
+    method: get
+    url: http://localhost:3000/artist/list
+    params:
+      limit: 30
+      offset: 0
+      type:
+      area:
+      initial: b
+  validate:
+    code: 200

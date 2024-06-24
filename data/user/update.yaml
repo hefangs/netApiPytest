@@ -1,0 +1,16 @@
+- feature: user
+  story: user_update
+  title: 更新用户信息
+  request:
+    method: get
+    url: http://localhost:3000/user/update
+    params:
+      gender:
+      birthday:
+      nickname: ok
+      province: 440000
+      city: 440300
+      signature:
+  validate:
+    code: 200
+

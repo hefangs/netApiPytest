@@ -1,0 +1,51 @@
+# 获取单个音乐的 URL
+- feature: song_url
+  story: get_single_music_url
+  title: 获取单个音乐的URL
+  request:
+    method: get
+    url: http://localhost:3000/song/url
+    params:
+      id: 406089317
+  validate:
+    code: 200
+
+# 获取多个音乐的 URL
+- feature: song_url
+  story: get_multiple_music_urls
+  title: 获取多个音乐的URL
+  request:
+    method: get
+    url: http://localhost:3000/song/url
+    params:
+      id: 406089317,29723016
+  validate:
+    code: 200
+
+# 获取音乐 URL 指定码率为 999000
+- feature: song_url
+  story: get_music_url_with_bitrate_320k
+  title: 获取音乐URL（999000码率）
+  request:
+    method: get
+    url: http://localhost:3000/song/url
+    params:
+      id: 406089317
+      br: 999000
+  validate:
+    code: 200
+
+# 获取音乐 URL 指定码率为 192k
+- feature: song_url
+  story: get_music_url_with_bitrate_192k
+  title: 获取音乐URL（192k码率）
+  request:
+    method: get
+    url: http://localhost:3000/song/url
+    params:
+      id: 406089317,29723016
+      br: 999000
+  validate:
+    code: 200
+
+

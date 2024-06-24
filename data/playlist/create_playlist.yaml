@@ -1,0 +1,15 @@
+- feature: playlist
+  story: create_playlist
+  title: 新建歌单
+  request:
+    method: get
+    url: http://localhost:3000/playlist/create
+    params:
+      name: "我的新歌单"
+      type: "NORMAL"
+      privacy: 0
+    extract:
+      id: $.id
+  validate:
+    code: 200
+

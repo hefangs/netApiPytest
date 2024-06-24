@@ -1,0 +1,47 @@
+- feature: playlist_subscribers
+  story: playlist_subscribers_default
+  title: 获取歌单收藏者（默认）
+  request:
+    method: get
+    url: http://localhost:3000/playlist/subscribers
+    params:
+      id: 919939187
+  validate:
+    code: 200
+
+- feature: playlist_subscribers
+  story: playlist_subscribers_limit
+  title: 获取歌单收藏者（限制数量）
+  request:
+    method: get
+    url: http://localhost:3000/playlist/subscribers
+    params:
+      id: 919939187
+      limit: 20
+  validate:
+    code: 200
+
+- feature: playlist_subscribers
+  story: playlist_subscribers_pagination
+  title: 获取歌单收藏者（分页）
+  request:
+    method: get
+    url: http://localhost:3000/playlist/subscribers
+    params:
+      id: 919939187
+      offset: 0
+  validate:
+    code: 200
+
+- feature: playlist_subscribers
+  story: playlist_subscribers_pagination
+  title: 获取歌单收藏者（参数全部都传）
+  request:
+    method: get
+    url: http://localhost:3000/playlist/subscribers
+    params:
+      id: 919939187
+      limit: 20
+      offset: 0
+  validate:
+    code: 200

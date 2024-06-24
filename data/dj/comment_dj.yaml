@@ -1,0 +1,50 @@
+- feature: dj_comments
+  story: get_dj_comments_default
+  title: 获取电台节目评论（默认）
+  request:
+    method: get
+    url: http://localhost:3000/comment/dj
+    params:
+      id: 526835598
+  validate:
+    code: 200
+
+- feature: dj_comments
+  story: get_dj_comments_with_limit
+  title: 获取电台节目评论（限制数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/dj
+    params:
+      id: 526835598
+      limit: 20
+  validate:
+    code: 200
+
+- feature: dj_comments
+  story: get_dj_comments_with_offset
+  title: 获取电台节目评论（分页 - 偏移数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/dj
+    params:
+      id: 526835598
+      limit: 20
+      offset: 0
+  validate:
+    code: 200
+
+- feature: dj_comments
+  story: get_dj_comments_with_before
+  title: 获取电台节目评论（分页 - 上一页最后一项的时间）
+  request:
+    method: get
+    url: http://localhost:3000/comment/dj
+    params:
+      id: 526835598
+      limit: 20
+      offset: 0
+      before:
+  validate:
+    code: 200
+

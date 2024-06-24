@@ -1,0 +1,8 @@
+- feature: recent_played_videos
+  story: get_recent_played_videos
+  title: 获取最近播放的视频
+  request:
+    method: get
+    url: http://localhost:3000/playlist/video/recent
+  validate:
+    code: 200

@@ -1,0 +1,25 @@
+- feature: playmode_intelligence
+  story: get_intelligence_list
+  title: 获取心动模式/智能播放列表
+  request:
+    method: get
+    url: http://localhost:3000/playmode/intelligence/list
+    params:
+      id: 28302514
+      pid: 504353039
+  validate:
+    code: 200
+
+- feature: playmode_intelligence
+  story: get_intelligence_list_with_sid
+  title: 获取心动模式/智能播放列表 (包含 sid)
+  request:
+    method: get
+    url: http://localhost:3000/playmode/intelligence/list
+    params:
+      id: 28302514
+      pid: 504353039
+      sid: 1877996649
+  validate:
+    code: 200
+    json:

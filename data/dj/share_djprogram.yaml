@@ -1,0 +1,12 @@
+- feature: Dj
+  story: share_djprogram
+  title: 分享电台节目
+  request:
+    method: get
+    url: http://localhost:3000/share/resource
+    params:
+      id: 1367665101
+      type: djprogram
+      msg:
+  validate:
+    code: 200

@@ -1,0 +1,22 @@
+- feature: search_suggest
+  story: search_suggestion
+  title: 获取搜索建议
+  request:
+    method: get
+    url: http://localhost:3000/search/suggest
+    params:
+      keywords: "危险派对"
+  validate:
+    code: 200
+
+- feature: search_suggest
+  story: search_suggestion_mobile
+  title: 获取移动端搜索建议
+  request:
+    method: get
+    url: http://localhost:3000/search/suggest
+    params:
+      keywords: "危险派对"
+      type: "mobile"
+  validate:
+    code: 200

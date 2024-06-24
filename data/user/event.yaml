@@ -1,0 +1,16 @@
+- feature: user
+  story: user_event
+  title: 获取用户动态
+  request:
+    method: get
+    url: http://localhost:3000/user/event
+    params:
+      uid: ${extract(uid)}
+      limit:
+      lasttime:
+    extract:
+      resourceId: $.events[*].info.resourceId
+      threadId: $.events[*].info.threadId
+  validate:
+    code: 200
+

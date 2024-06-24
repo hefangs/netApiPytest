@@ -1,0 +1,23 @@
+- feature: homepage
+  story: get_homepage_info
+  title: 获取APP首页信息
+  request:
+    method: get
+    url: http://localhost:3000/homepage/block/page
+    params:
+      refresh: false
+  validate:
+    code: 200
+
+- feature: homepage
+  story: get_homepage_info_refresh
+  title: 获取APP首页信息（刷新数据）
+  request:
+    method: get
+    url: http://localhost:3000/homepage/block/page
+    params:
+      refresh: true
+  validate:
+    code: 200
+
+

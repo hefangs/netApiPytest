@@ -1,0 +1,13 @@
+- feature: user
+  story: user_followeds
+  title: 获取用户粉丝列表
+  request:
+    method: get
+    url: http://localhost:3000/user/followeds
+    params:
+      uid: ${extract(uid)}
+      limit:
+      offset:
+  validate:
+    code: 200
+

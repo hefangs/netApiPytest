@@ -1,0 +1,51 @@
+- feature: hot_topic
+  story: get_hot_topic_default
+  title: 获取热门话题默认数量
+  request:
+    method: get
+    url: http://localhost:3000/hot/topic
+    params: { }
+    extract:
+      actid: $.hot[0].actid
+  validate:
+    code: 200
+
+- feature: hot_topic
+  story: get_hot_topic_with_limit
+  title: 获取热门话题指定数量
+  request:
+    method: get
+    url: http://localhost:3000/hot/topic
+    params:
+      limit: 20
+    extract:
+      actid: $.hot[0].actid
+  validate:
+    code: 200
+
+- feature: hot_topic
+  story: get_hot_topic_with_offset
+  title: 获取热门话题指定偏移量
+  request:
+    method: get
+    url: http://localhost:3000/hot/topic
+    params:
+      offset: 0
+    extract:
+      actid: $.hot[0].actid
+  validate:
+    code: 200
+
+- feature: hot_topic
+  story: get_hot_topic_with_pagination
+  title: 获取热门话题分页
+  request:
+    method: get
+    url: http://localhost:3000/hot/topic
+    params:
+      limit: 20
+      offset: 0
+    extract:
+      actid: $.hot[0].actId
+  validate:
+    code: 200

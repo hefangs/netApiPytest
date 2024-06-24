@@ -1,0 +1,11 @@
+- feature: user
+  story: user_event_del
+  title: 删除用户动态
+  request:
+    method: get
+    url: http://localhost:3000/event/del
+    params:
+      evId: ${extract(event_id)}
+  validate:
+    code: 200
+

@@ -1,0 +1,8 @@
+- feature: homepage
+  story: get_homepage_dragon_ball_icons
+  title: 获取APP首页圆形图标入口列表
+  request:
+    method: get
+    url: http://localhost:3000/homepage/dragon/ball
+  validate:
+    code: 200

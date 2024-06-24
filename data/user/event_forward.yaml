@@ -1,0 +1,15 @@
+- feature: user
+  story: user_event_forward
+  title: 转发用户动态
+  request:
+    method: get
+    url: http://localhost:3000/event/forward
+    params:
+      uid: ${extract(uid)}
+      evId: ${extract(resource_id)}
+      forwards:
+    extract:
+      eventId: $.data.eventId
+  validate:
+    code: 200
+

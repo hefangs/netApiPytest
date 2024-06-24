@@ -1,0 +1,223 @@
+- feature: like_comment_song
+  story: like_comment_song
+  title: 给歌曲评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 1873321491
+      cid: 5431158953
+      t: 1
+      type: 0
+  validate:
+    code: 200
+
+- feature: unlike_comment_song
+  story: unlike_comment_song
+  title: 取消给歌曲评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 1873321491
+      cid: 5431158953
+      t: 0
+      type: 0
+  validate:
+    code: 200
+
+- feature: like_comment_mv
+  story: like_comment_mv
+  title: 给MV评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 311004
+      cid: 28471026
+      t: 1
+      type: 1
+  validate:
+    code: 200
+
+- feature: unlike_comment_mv
+  story: unlike_comment_mv
+  title: 取消给MV评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 311004
+      cid: 28471026
+      t: 0
+      type: 1
+  validate:
+    code: 200
+
+- feature: like_comment_playlist
+  story: like_comment_playlist
+  title: 给歌单评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 893126993
+      cid: 541513131
+      t: 1
+      type: 2
+  validate:
+    code: 200
+
+- feature: unlike_comment_playlist
+  story: unlike_comment_playlist
+  title: 取消给歌单评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 893126993
+      cid: 541513131
+      t: 0
+      type: 2
+  validate:
+    code: 200
+
+- feature: like_comment_album
+  story: like_comment_album
+  title: 给专辑评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 3017104
+      cid: 11346240
+      t: 1
+      type: 3
+  validate:
+    code: 200
+
+- feature: unlike_comment_album
+  story: unlike_comment_album
+  title: 取消给专辑评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 3017104
+      cid: 11346240
+      t: 0
+      type: 3
+  validate:
+    code: 200
+
+- feature: like_comment_dj
+  story: like_comment_dj
+  title: 给电台节目评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 2538375026
+      cid: 6069600181
+      t: 1
+      type: 4
+  validate:
+    code: 200
+
+- feature: unlike_comment_dj
+  story: unlike_comment_dj
+  title: 取消给电台节目评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 2538375026
+      cid: 6069600181
+      t: 0
+      type: 4
+  validate:
+    code: 200
+
+- feature: like_comment_video
+  story: like_comment_video
+  title: 给视频评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+      cid: 3569758358
+      t: 1
+      type: 5
+  validate:
+    code: 200
+
+- feature: unlike_comment_video
+  story: unlike_comment_video
+  title: 取消给视频评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+      cid: 3569758358
+      t: 0
+      type: 5
+  validate:
+    code: 200
+
+- feature: like_comment_event
+  story: like_comment_event
+  title: 给动态评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      cid: 5437158321
+      threadId: A_EV_2_19714618747_560803159
+      t: 1
+      type: 6
+  validate:
+    code: 200
+
+- feature: unlike_comment_event
+  story: unlike_comment_event
+  title: 取消给动态评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      cid: 5437158321
+      threadId: A_EV_2_19714618747_560803159
+      t: 0
+      type: 6
+  validate:
+    code: 200
+
+- feature: like_comment_radio
+  story: like_comment_radio
+  title: 给电台评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 2538375026
+      cid: 6069600181
+      t: 1
+      type: 7
+  validate:
+    code: 200
+
+- feature: unlike_comment_radio
+  story: unlike_comment_radio
+  title: 取消给电台评论点赞
+  request:
+    method: get
+    url: http://localhost:3000/comment/like
+    params:
+      id: 2538375026
+      cid: 6069600181
+      t: 0
+      type: 7
+  validate:
+    code: 200

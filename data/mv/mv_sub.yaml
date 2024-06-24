@@ -1,0 +1,23 @@
+- feature: mv_sub
+  story: favorite_mv
+  title: 收藏MV
+  request:
+    method: post
+    url: http://localhost:3000/mv/sub
+    params:
+      mvid: 395035
+      t: 1
+  validate:
+    code: 200
+
+- feature: mv_sub
+  story: unfavorite_mv
+  title: 取消收藏MV
+  request:
+    method: post
+    url: http://localhost:3000/mv/sub
+    params:
+      mvid: 395035
+      t: 0
+  validate:
+    code: 200

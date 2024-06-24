@@ -1,0 +1,22 @@
+- feature: playlist_detail
+  story: get_playlist_detail
+  title: 获取歌单详情
+  request:
+    method: get
+    url: http://localhost:3000/playlist/detail
+    params:
+      id: 893126993
+      s: 8
+  validate:
+    code: 200
+
+- feature: playlist_detail
+  story: get_playlist_detail
+  title: 获取歌单详情(不传可选参数)
+  request:
+    method: get
+    url: http://localhost:3000/playlist/detail
+    params:
+      id: 893126993
+  validate:
+    code: 200

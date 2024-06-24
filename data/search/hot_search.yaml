@@ -1,0 +1,8 @@
+- feature: hot_search
+  story: hot_search_list
+  title: 获取热搜列表(简略)
+  request:
+    method: get
+    url: http://localhost:3000/search/hot
+  validate:
+    code: 200

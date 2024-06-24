@@ -1,0 +1,11 @@
+- feature: song
+  story: update_song_order
+  title: 调整歌曲顺序
+  request:
+    method: get
+    url: http://localhost:3000/song/order/update
+    params:
+      pid: 504353039
+      ids: [ 28302514,258498,77127,176039,114628,1306459970 ]
+  validate:
+    code: 200

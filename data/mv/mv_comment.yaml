@@ -1,0 +1,49 @@
+- feature: mv_comments
+  story: get_mv_comments_default
+  title: 获取MV评论（默认）
+  request:
+    method: get
+    url: http://localhost:3000/comment/mv
+    params:
+      id: 5308821
+  validate:
+    code: 200
+
+- feature: mv_comments
+  story: get_mv_comments_with_limit
+  title: 获取MV评论（限制数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/mv
+    params:
+      id: 5308821
+      limit: 20
+  validate:
+    code: 200
+
+- feature: mv_comments
+  story: get_mv_comments_with_offset
+  title: 获取MV评论（分页 - 偏移数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/mv
+    params:
+      id: 5308821
+      limit: 20
+      offset: 0
+  validate:
+    code: 200
+
+- feature: mv_comments
+  story: get_mv_comments_all_params
+  title: 获取MV评论（全部参数）
+  request:
+    method: get
+    url: http://localhost:3000/comment/mv
+    params:
+      id: 5308821
+      limit: 20
+      offset: 0
+      before:
+  validate:
+    code: 200

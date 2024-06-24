@@ -1,0 +1,25 @@
+- feature: playlist_tracks
+  story: add_tracks_to_playlist
+  title: 添加歌曲到歌单
+  request:
+    method: get
+    url: http://localhost:3000/playlist/tracks
+    params:
+      op: add
+      pid: 504353039
+      tracks: 5256469
+  validate:
+    code: 200
+
+- feature: playlist_tracks
+  story: delete_tracks_from_playlist
+  title: 从歌单删除歌曲
+  request:
+    method: get
+    url: http://localhost:3000/playlist/tracks
+    params:
+      op: del
+      pid: 504353039
+      tracks: 5256469
+  validate:
+    code: 200

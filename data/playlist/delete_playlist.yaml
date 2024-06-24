@@ -1,0 +1,11 @@
+- feature: playlist
+  story: delete_playlist
+  title: 删除歌单
+  request:
+    method: get
+    url: http://localhost:3000/playlist/delete
+    params:
+      id: ${extract(id)}
+  validate:
+    code: 200
+

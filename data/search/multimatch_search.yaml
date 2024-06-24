@@ -1,0 +1,10 @@
+- feature: search_multimatch
+  story: search_multimatch_example
+  title: 多重匹配搜索
+  request:
+    method: get
+    url: http://localhost:3000/search/multimatch
+    params:
+      keywords: "都是你的错"
+  validate:
+    code: 200

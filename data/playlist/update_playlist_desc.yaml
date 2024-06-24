@@ -1,0 +1,11 @@
+- feature: test_playlist
+  story: update_playlist_desc
+  title: 更新歌单描述
+  request:
+    method: get
+    url: http://localhost:3000/playlist/desc/update
+    params:
+      id: 10178922332
+      desc: 我的新歌单
+  validate:
+    code: 200

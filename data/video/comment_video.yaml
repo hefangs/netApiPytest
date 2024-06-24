@@ -1,0 +1,50 @@
+- feature: video_comments
+  story: get_video_comments_default
+  title: 获取视频评论（默认）
+  request:
+    method: get
+    url: http://localhost:3000/comment/video
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+  validate:
+    code: 200
+
+- feature: video_comments
+  story: get_video_comments_with_limit
+  title: 获取视频评论（限制数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/video
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+      limit: 20
+  validate:
+    code: 200
+
+- feature: video_comments
+  story: get_video_comments_with_offset
+  title: 获取视频评论（分页 - 偏移数量）
+  request:
+    method: get
+    url: http://localhost:3000/comment/video
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+      limit: 20
+      offset: 0
+  validate:
+    code: 200
+
+
+- feature: video_comments
+  story: get_video_comments_all_params
+  title: 获取视频评论（全部参数）
+  request:
+    method: get
+    url: http://localhost:3000/comment/video
+    params:
+      id: 89ADDE33C0AAE8EC14B99F6750DB954D
+      limit: 20
+      offset: 0
+      before:
+  validate:
+    code: 200

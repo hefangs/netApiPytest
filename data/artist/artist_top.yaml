@@ -1,0 +1,11 @@
+- feature: artist
+  story: get_artist_top_50_songs
+  title: 获取歌手热门 50 首歌曲
+  request:
+    method: get
+    url: http://localhost:3000/artist/top/song
+    params:
+      id: 222871
+  validate:
+    code: 200
+

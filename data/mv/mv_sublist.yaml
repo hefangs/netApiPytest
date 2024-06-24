@@ -1,0 +1,11 @@
+- feature: mv_sublist
+  story: get_favorite_mvs
+  title: 获取收藏的MV列表
+  request:
+    method: get
+    url: http://localhost:3000/mv/sublist
+    params:
+      limit: 20
+      offset: 0
+  validate:
+    code: 200

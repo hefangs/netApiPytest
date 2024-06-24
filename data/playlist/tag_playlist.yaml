@@ -1,0 +1,8 @@
+- feature: highquality_tags
+  story: get_highquality_tags
+  title: 获取精品歌单标签列表
+  request:
+    method: get
+    url: http://localhost:3000/playlist/highquality/tags
+  validate:
+    code: 200
