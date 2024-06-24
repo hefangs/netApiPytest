@@ -104,3 +104,81 @@ class TestArtist:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist.yaml')))
+	def test_artist(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_mv.yaml')))
+	def test_artist_mv(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist mv with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_album.yaml')))
+	def test_artist_album(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist album with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_desc.yaml')))
+	def test_artist_desc(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist desc with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_detail.yaml')))
+	def test_artist_detail(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_simi.yaml')))
+	def test_artist_simi(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist simi with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

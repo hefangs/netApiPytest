@@ -58,3 +58,15 @@ class TestVideo:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'video', 'mylike.yaml')))
+	def test_mylike(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing mylike with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

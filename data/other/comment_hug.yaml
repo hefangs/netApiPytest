@@ -5,7 +5,7 @@
     method: post
     url: http://localhost:3000/hug/comment
     params:
-      uid: 285516405
+      uid: ${extract(uid)}
       cid: 1167145843
       sid: 863481066
   validate:

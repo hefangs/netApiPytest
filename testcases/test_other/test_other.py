@@ -103,3 +103,57 @@ class TestOther:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'comment_hug.yaml')))
+	def test_comment_hug(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		# 读取uid
+		data = utils.read_file(os.path.join(os.getcwd(), 'extract.yaml'))
+		uid = data.get('uid')
+		logger.info(f"uid:{uid}")
+		# 替换uid 原来的值 ${extract(uid)}
+		for key, value in params.items():
+			if value == '${extract(uid)}':
+				params[key] = uid
+				logger.info(f"Testing comment hug with URL: {url} and params: {params}")
+				res = session.get(url, params=params)
+				try:
+					res.raise_for_status()
+					logger.info(f"Response: {res.json()}")
+				except Exception as e:
+					logger.error(f"Request failed: {e}")
+					raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'comment_hug_list.yaml')))
+	def test_comment_hug_list(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		# 读取uid
+		data = utils.read_file(os.path.join(os.getcwd(), 'extract.yaml'))
+		uid = data.get('uid')
+		logger.info(f"uid:{uid}")
+		for key, value in params.items():
+			if value == '${extract(uid)}':
+				params[key] = uid
+				logger.info(f"Testing  comment hug list with URL: {url} and params: {params}")
+				res = session.get(url, params=params)
+				try:
+					res.raise_for_status()
+					logger.info(f"Response: {res.json()}")
+				except Exception as e:
+					logger.error(f"Request failed: {e}")
+					raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'banner.yaml')))
+	def test_banner(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  banner with URL: {url} and params: {params}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

@@ -1,0 +1,23 @@
+- feature: album_sub
+  story: album_subscribe
+  title: 收藏专辑
+  request:
+    method: get
+    url: http://localhost:3000/album/sub
+    params:
+      id: 34543578
+      t: 1
+  validate:
+    code: 200
+
+- feature: album_sub
+  story: album_unsubscribe
+  title: 取消收藏专辑
+  request:
+    method: get
+    url: http://localhost:3000/album/sub
+    params:
+      id: 34543578
+      t: 0
+  validate:
+    code: 200

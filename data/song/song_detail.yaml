@@ -1,0 +1,21 @@
+- feature: song_detail
+  story: get_single_song_detail
+  title: 获取单首歌曲详情
+  request:
+    method: get
+    url: http://localhost:3000/song/detail
+    params:
+      ids: 1877996649
+  validate:
+    code: 200
+
+- feature: song_detail
+  story: get_multiple_songs_detail
+  title: 获取多首歌曲详情
+  request:
+    method: get
+    url: http://localhost:3000/song/detail
+    params:
+      ids: 1873321491,16375205
+  validate:
+    code: 200

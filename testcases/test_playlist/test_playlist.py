@@ -20,7 +20,7 @@ logger = logging.getLogger(__name__)
 
 
 @pytest.mark.usefixtures("session", "logs")
-class TestPlaylist:
+class TestPlayList:
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'playlist', 'user_playlist.yaml')))
 	def test_user_playlist(self, args, session):
 		url = args['request']['url']
@@ -351,6 +351,19 @@ class TestPlaylist:
 		if 'before' in params:
 			params['before'] = params.get('before') or int(time.time() * 1000)
 		logger.info(f"Testing comment playlist  with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'playlist', 'simi_playlist.yaml')))
+	def test_simi_playlist(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing simi playlist  with URL: {url} and params: {params}")
 		res = session.get(url, params=params)
 		try:
 			res.raise_for_status()

@@ -33,3 +33,59 @@ class TestAlbum:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_content.yaml')))
+	def test_album_content(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album content with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_dynamic.yaml')))
+	def test_album_dynamic(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album dynamic with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_sub.yaml')))
+	def test_album_sub(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album sub with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_sublist.yaml')))
+	def test_album_sublist(self, args, session):
+		url = args['request']['url']
+		params = args['request'].get('params')
+		if params is None:
+			res = session.get(url)
+			logger.info(f"Testing album sublist with URL: {url}")
+		else:
+			res = session.get(url, params=params)
+			logger.info(f"Testing album sublist with URL: {url} and params: {params}")
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

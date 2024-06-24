@@ -1,0 +1,10 @@
+- feature: album_content
+  story: get_album_content
+  title: 获取专辑内容
+  request:
+    method: get
+    url: http://localhost:3000/album
+    params:
+      id: 20339
+  validate:
+    code: 200

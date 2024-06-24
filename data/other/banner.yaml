@@ -1,0 +1,53 @@
+- feature: banner
+  story: get_default_banner
+  title: 获取默认轮播图
+  request:
+    method: get
+    url: http://localhost:3000/banner
+  validate:
+    code: 200
+
+- feature: banner
+  story: get_pc_banner
+  title: 获取 PC 轮播图
+  request:
+    method: get
+    url: http://localhost:3000/banner
+    params:
+      type: 0
+  validate:
+    code: 200
+
+- feature: banner
+  story: get_android_banner
+  title: 获取 Android 轮播图
+  request:
+    method: get
+    url: http://localhost:3000/banner
+    params:
+      type: 1
+  validate:
+    code: 200
+
+- feature: banner
+  story: get_iphone_banner
+  title: 获取 iPhone 轮播图
+  request:
+    method: get
+    url: http://localhost:3000/banner
+    params:
+      type: 2
+  validate:
+    code: 200
+
+- feature: banner
+  story: get_ipad_banner
+  title: 获取 iPad 轮播图
+  request:
+    method: get
+    url: http://localhost:3000/banner
+    params:
+      type: 3
+  validate:
+    code: 200
+
