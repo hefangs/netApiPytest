@@ -34,14 +34,14 @@ class TestPlayList:
 		for key, value in params.items():
 			if value == "${extract(uid)}":
 				params[key] = uid
-				logger.info(f"Testing user playlist with URL: {url} and params: {params}")
-				res = session.get(url, params=params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response :{res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		logger.info(f"Testing user playlist with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'playlist', 'update_playlist.yaml')))
 	def test_update_playlist(self, args, session):
@@ -364,6 +364,31 @@ class TestPlayList:
 		url = args['request']['url']
 		params = args['request']['params']
 		logger.info(f"Testing simi playlist  with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'playlist', 'recommend_resource.yaml')))
+	def test_recommend_resource(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing recommend resource  with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'playlist', 'personalized_playlist.yaml')))
+	def test_personalized_playlist(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing personalized playlist  with URL: {url} and params: {params}")
 		res = session.get(url, params=params)
 		try:
 			res.raise_for_status()

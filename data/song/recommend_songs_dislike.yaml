@@ -1,0 +1,10 @@
+- feature: recommend_songs
+  story: recommend_songs_dislike
+  title: 每日推荐歌曲-不感兴趣
+  request:
+    method: get
+    url: http://localhost:3000/recommend/songs/dislike
+    params:
+      id: 168091
+  validate:
+    code: 200

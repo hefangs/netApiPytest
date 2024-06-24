@@ -1,0 +1,10 @@
+- feature: liked_music_list
+  story: 获取已喜欢音乐列表
+  title: 喜欢音乐列表
+  request:
+    method: get
+    url: http://localhost:3000/likelist
+    params:
+      uid: ($extract.uid)
+  validate:
+    code: 200

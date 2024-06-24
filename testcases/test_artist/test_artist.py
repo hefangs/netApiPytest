@@ -182,3 +182,16 @@ class TestArtist:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_hot.yaml')))
+	def test_artist_hot(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist hot with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

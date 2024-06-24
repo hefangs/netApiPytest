@@ -33,14 +33,15 @@ class TestDj:
 		for key, value in params.items():
 			if value == "${extract(uid)}":
 				params[key] = uid
-				logger.info(f"替换 ${'extract(uid)'}:{uid}")
-				logger.info(f"Testing user_dj  with URL: {url} and params: {params}")
-				res = session.get(url, params=params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
+		logger.info(f"替换 ${'extract(uid)'}:{uid}")
+		logger.info(f"Testing user_dj  with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'dj', 'share_djradio.yaml')))
 	def test_share_djradio(self, args, session):
@@ -83,6 +84,31 @@ class TestDj:
 		if 'before' in params:
 			params['before'] = params.get('before') or int(time.time() * 1000)
 		logger.info(f"Testing comment_dj with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'dj', 'personalized_djprogram.yaml')))
+	def test_personalized_djprogram(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing personalized_djprogram with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'dj', 'recommended_programs.yaml')))
+	def test_recommended_programs(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing recommended programs with URL: {url} and params: {params}")
 		res = session.get(url, params=params)
 		try:
 			res.raise_for_status()

@@ -47,14 +47,14 @@ class TestUser:
 			if value == "${extract(uid)}":
 				logger.info(f"Replacing {params[key]}")
 				params[key] = uid
-				logger.info(f"Testing user detail with URL: {url} and params: {params}")
-				res = session.get(url, params=params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		logger.info(f"Testing user detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'account.yaml')))
 	def test_user_account(self, args, session):
@@ -106,14 +106,14 @@ class TestUser:
 			if value == "${extract(uid)}":
 				logger.info(f"Replacing {params[key]}")
 				params[key] = uid
-				logger.info(f"Testing user binding with URL: {url} and params: {params}")
-				res = session.get(url, params=params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		logger.info(f"Testing user binding with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.skipif(True, reason="skip")
 	# update user info 每天限制2次
@@ -155,20 +155,20 @@ class TestUser:
 			if value == "${extract(uid)}":
 				logger.info(f"Replacing {params[key]}")
 				params[key] = uid
-				time_stamp = int(time.time())
-				all_params = {
-					'uid': params['uid'],
-					'limit': params.get('limit') or 10,
-					'time': params.get('time') or time_stamp
-				}
-				logger.info(f"Testing comment history with URL: {url} and params: {all_params}")
-				res = session.get(url, params=all_params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		time_stamp = int(time.time())
+		all_params = {
+			'uid': params['uid'],
+			'limit': params.get('limit') or 10,
+			'time': params.get('time') or time_stamp
+		}
+		logger.info(f"Testing comment history with URL: {url} and params: {all_params}")
+		res = session.get(url, params=all_params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'follows.yaml')))
 	def test_user_follows(self, args, session):
@@ -183,17 +183,17 @@ class TestUser:
 			if value == "${extract(uid)}":
 				params[key] = uid
 				logger.info(f"Replacing {params[key]}")
-				logger.info(f"Testing user follows with URL: {url} and params: {params}")
-				res = session.get(url, params=params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		logger.info(f"Testing user follows with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'followeds.yaml')))
-	def test_user_follows(self, args, session):
+	def test_user_followeds(self, args, session):
 		url = args['request']['url']
 		params = args['request']['params']
 		# 从 extract 文件中获取 uid
@@ -205,19 +205,19 @@ class TestUser:
 			if value == "${extract(uid)}":
 				params[key] = uid
 				logger.info(f"Replacing {params[key]}")
-				all_params = {
-					'uid': params['uid'],
-					'limit': params.get('limit') or 30,
-					'offset': params.get('offset') or 0
-				}
-				logger.info(f"Testing user followeds with URL: {url} and params: {all_params}")
-				res = session.get(url, params=all_params)
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+		all_params = {
+			'uid': params['uid'],
+			'limit': params.get('limit') or 30,
+			'offset': params.get('offset') or 0
+		}
+		logger.info(f"Testing user followeds with URL: {url} and params: {all_params}")
+		res = session.get(url, params=all_params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'event.yaml')))
 	def test_user_event(self, args, session):
@@ -232,44 +232,44 @@ class TestUser:
 			if value == "${extract(uid)}":
 				params[key] = uid
 				logger.info(f"Replacing {params[key]}")
-				all_params = {
-					'uid': params['uid'],
-					'limit': params.get('limit') or 30,
-					'lasttime': params.get('lasttime') or int(time.time() * 1000)
+		all_params = {
+			'uid': params['uid'],
+			'limit': params.get('limit') or 30,
+			'lasttime': params.get('lasttime') or int(time.time() * 1000)
+		}
+		logger.info(f"Testing user event with URL: {url} and params: {all_params}")
+		res = session.get(url, params=all_params)
+		
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+			
+			# 获取 events 列表长度并生成随机索引
+			events = res.json().get('events', [])
+			logger.info(f"events length: {len(events)}")
+			if not events:
+				logger.error("No events found in the response.")
+				raise Exception("No events found")
+			random_index = random.randint(0, len(events) - 1)
+			logger.info(f"Random index selected: {random_index}")
+			
+			# 写入 resource_id & thread_id
+			jsonpath_expression_resource_id = parse(f'$.events[{random_index}].info.resourceId')
+			jsonpath_expression_thread_id = parse(f'$.events[{random_index}].info.threadId')
+			match_resource_id = jsonpath_expression_resource_id.find(res.json())
+			match_thread_id = jsonpath_expression_thread_id.find(res.json())
+			if match_resource_id and match_thread_id:
+				logger.info(f"extract resource_id: {match_resource_id[0].value}")
+				logger.info(f"extract thread_id: {match_thread_id[0].value}")
+				data = {
+					'resource_id': match_resource_id[0].value,
+					'thread_id': match_thread_id[0].value
 				}
-				logger.info(f"Testing user event with URL: {url} and params: {all_params}")
-				res = session.get(url, params=all_params)
-				
-				try:
-					res.raise_for_status()
-					logger.info(f"Response: {res.json()}")
-					
-					# 获取 events 列表长度并生成随机索引
-					events = res.json().get('events', [])
-					logger.info(f"events length: {len(events)}")
-					if not events:
-						logger.error("No events found in the response.")
-						raise Exception("No events found")
-					random_index = random.randint(0, len(events) - 1)
-					logger.info(f"Random index selected: {random_index}")
-					
-					# 写入 resource_id & thread_id
-					jsonpath_expression_resource_id = parse(f'$.events[{random_index}].info.resourceId')
-					jsonpath_expression_thread_id = parse(f'$.events[{random_index}].info.threadId')
-					match_resource_id = jsonpath_expression_resource_id.find(res.json())
-					match_thread_id = jsonpath_expression_thread_id.find(res.json())
-					if match_resource_id and match_thread_id:
-						logger.info(f"extract resource_id: {match_resource_id[0].value}")
-						logger.info(f"extract thread_id: {match_thread_id[0].value}")
-						data = {
-							'resource_id': match_resource_id[0].value,
-							'thread_id': match_thread_id[0].value
-						}
-						utils.write_file(os.path.join(os.getcwd(), 'extract.yaml'), data)
-						logger.info(f"write resource_id & thread_id to extract data:{data}")
-				except Exception as e:
-					logger.error(f"Request failed: {e}")
-					raise
+				utils.write_file(os.path.join(os.getcwd(), 'extract.yaml'), data)
+				logger.info(f"write resource_id & thread_id to extract data:{data}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
 	
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'event_forward.yaml')))
 	def test_user_event_forwards(self, args, session):
@@ -501,6 +501,19 @@ class TestUser:
 		url = args['request']['url']
 		params = args['request']['params']
 		logger.info(f"Testing user event msg with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'simi_user.yaml')))
+	def test_user_simi_user(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing user simi user with URL: {url} and params: {params}")
 		res = session.get(url, params=params)
 		try:
 			res.raise_for_status()

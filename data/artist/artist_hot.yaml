@@ -1,0 +1,11 @@
+- feature: hot_artists
+  story: 获取热门歌手数据
+  title: 热门歌手
+  request:
+    method: get
+    url: http://localhost:3000/top/artists
+    params:
+      limit: 50
+      offset: 0
+  validate:
+    code: 200

@@ -1,0 +1,24 @@
+- feature: mv_all
+  story: 获取全部 MV
+  title: 全部 MV
+  request:
+    method: get
+    url: http://localhost:3000/mv/all
+  validate:
+    code: 200
+
+- feature: mv_all_params
+  story: 获取 MV
+  title: 全部默认参数筛选 MV
+  request:
+    method: get
+    url: http://localhost:3000/mv/all
+    params:
+      area: 全部
+      type: 全部
+      order: 上升最快
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+

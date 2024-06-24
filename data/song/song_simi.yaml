@@ -1,0 +1,10 @@
+- feature: simi_song
+  story: simi_song_default
+  title: 获取相似音乐（默认）
+  request:
+    method: get
+    url: http://localhost:3000/simi/song
+    params:
+      id: 347230
+  validate:
+    code: 200

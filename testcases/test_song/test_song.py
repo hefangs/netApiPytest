@@ -158,3 +158,79 @@ class TestSong:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'song_simi.yaml')))
+	def test_song_simi(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing song simi with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'recommend_songs.yaml')))
+	def test_recommend_songs(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing recommend songs with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'recommend_songs_dislike.yaml')))
+	def test_recommend_songs_dislike(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing recommend songs dislike with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'history_recommend_songs.yaml')))
+	def test_history_recommend_songs(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing history recommend songs with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'history_recommend_songs_detail.yaml')))
+	def test_history_recommend_songs_detail(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing history recommend songs detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'personalized_new_song.yaml')))
+	def test_personalized_new_song(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing personalized new song with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

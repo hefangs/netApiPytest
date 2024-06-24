@@ -89,3 +89,29 @@ class TestAlbum:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_top.yaml')))
+	def test_album_top(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album top with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_new.yaml')))
+	def test_album_new(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album new with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

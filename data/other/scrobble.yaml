@@ -1,0 +1,12 @@
+- feature: scrobble
+  story: 听歌打卡 - 更新听歌排行数据
+  title: 听歌打卡
+  request:
+    method: get
+    url: http://localhost:3000/scrobble
+    params:
+      id: 518066366
+      sourceid: 36780169
+      time: 291
+  validate:
+    code: 200
