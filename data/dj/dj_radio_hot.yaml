@@ -1,0 +1,25 @@
+- feature: get_category_hot_radio
+  story: 获取类别热门电台
+  title: 类别热门电台
+  request:
+    method: get
+    url: http://localhost:3000/dj/radio/hot
+    params:
+      limit: 30
+      offset: 0
+      cateId: 2001
+  validate:
+    code: 200
+
+- feature: get_category_hot_radio_3D
+  story: 获取类别热门电台 (3D|电子)
+  title: 类别热门电台 (3D|电子)
+  request:
+    method: get
+    url: http://localhost:3000/dj/radio/hot
+    params:
+      limit: 30
+      offset: 0
+      cateId: 10002
+  validate:
+    code: 200

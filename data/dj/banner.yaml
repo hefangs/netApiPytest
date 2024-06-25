@@ -1,0 +1,8 @@
+- feature: get_dj_banner
+  story: 获取电台 banner
+  title: 电台 banner
+  request:
+    method: get
+    url: http://localhost:3000/dj/banner
+  validate:
+    code: 200

@@ -1,0 +1,8 @@
+- feature: get_recommend_dj_categories
+  story: 获取电台推荐类型列表
+  title: 推荐电台类型列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/category/recommend
+  validate:
+    code: 200

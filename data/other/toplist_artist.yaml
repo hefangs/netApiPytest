@@ -1,0 +1,43 @@
+- feature: get_artist_ranking_chinese
+  story: 获取排行榜中的华语歌手榜
+  title: 华语歌手榜
+  request:
+    method: get
+    url: http://localhost:3000/toplist/artist
+    params:
+      type: 1
+  validate:
+    code: 200
+
+- feature: get_artist_ranking_western
+  story: 获取排行榜中的欧美歌手榜
+  title: 欧美歌手榜
+  request:
+    method: get
+    url: http://localhost:3000/toplist/artist
+    params:
+      type: 2
+  validate:
+    code: 200
+
+- feature: get_artist_ranking_korean
+  story: 获取排行榜中的韩国歌手榜
+  title: 韩国歌手榜
+  request:
+    method: get
+    url: http://localhost:3000/toplist/artist
+    params:
+      type: 3
+  validate:
+    code: 200
+
+- feature: get_artist_ranking_japanese
+  story: 获取排行榜中的日本歌手榜
+  title: 日本歌手榜
+  request:
+    method: get
+    url: http://localhost:3000/toplist/artist
+    params:
+      type: 4
+  validate:
+    code: 200

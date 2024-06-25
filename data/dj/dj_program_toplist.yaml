@@ -1,0 +1,20 @@
+- feature: get_dj_program_toplist
+  story: 获取电台节目榜
+  title: 电台节目榜列表(no params)
+  request:
+    method: get
+    url: http://localhost:3000/dj/program/toplist
+  validate:
+    code: 200
+
+- feature: get_dj_program_toplist
+  story: 获取电台节目榜
+  title: 电台节目榜列表(limit & offset)
+  request:
+    method: get
+    url: http://localhost:3000/dj/program/toplist
+    params:
+      limit: 100
+      offset: 0
+  validate:
+    code: 200

@@ -1,0 +1,10 @@
+- feature: get_dj_program_detail
+  story: 获取电台节目详情
+  title: 电台节目详情
+  request:
+    method: get
+    url: http://localhost:3000/dj/program/detail
+    params:
+      id: 1367665101
+  validate:
+    code: 200

@@ -1,0 +1,47 @@
+- feature: get_dj_subscriber_list_default
+  story: 获取电台订阅者列表，默认参数
+  title: 电台订阅者列表 - 默认参数
+  request:
+    method: get
+    url: http://localhost:3000/dj/subscriber
+    params:
+      id: 335425050
+  validate:
+    code: 200
+
+- feature: get_dj_subscriber_list_with_limit
+  story: 获取电台订阅者列表，限制返回数量
+  title: 电台订阅者列表 - 限制返回数量
+  request:
+    method: get
+    url: http://localhost:3000/dj/subscriber
+    params:
+      id: 335425050
+      limit: 20
+  validate:
+    code: 200
+
+- feature: get_dj_subscriber_list_with_time
+  story: 获取电台订阅者列表，使用时间分页参数
+  title: 电台订阅者列表 - 使用时间分页参数
+  request:
+    method: get
+    url: http://localhost:3000/dj/subscriber
+    params:
+      id: 335425050
+      time:
+  validate:
+    code: 200
+
+- feature: get_dj_subscriber_list_with_limit_and_time
+  story: 获取电台订阅者列表，限制返回数量并使用时间分页参数
+  title: 电台订阅者列表 - 限制返回数量并使用时间分页参数
+  request:
+    method: get
+    url: http://localhost:3000/dj/subscriber
+    params:
+      id: 335425050
+      limit: 20
+      time:
+  validate:
+    code: 200

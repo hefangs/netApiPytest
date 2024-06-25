@@ -267,3 +267,40 @@ class TestOther:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'all_toplist.yaml')))
+	def test_all_toplist(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing  all toplist with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'all_toplist_detail.yaml')))
+	def test_all_toplist_detail(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing  all toplist detail with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'toplist_artist.yaml')))
+	def test_toplist_artist(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  toplist artist with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

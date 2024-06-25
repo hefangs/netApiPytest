@@ -1,0 +1,8 @@
+- feature: get_non_hot_dj_categories
+  story: 获取电台非热门类型列表
+  title: 非热门电台类型列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/category/excludehot
+  validate:
+    code: 200
