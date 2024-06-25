@@ -151,3 +151,55 @@ class TestMv:
 		except Exception as e:
 			logger.error(f"Request Failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'mv', 'mv_top.yaml')))
+	def test_mv_top(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing mv top with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'mv', 'mv_detail.yaml')))
+	def test_mv_detail(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing mv detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'mv', 'mv_detail_info.yaml')))
+	def test_mv_detail_info(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing mv detail info with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'mv', 'mv_url.yaml')))
+	def test_mv_url(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing mv url with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise

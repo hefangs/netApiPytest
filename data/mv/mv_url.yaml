@@ -1,0 +1,22 @@
+- feature: get_mv_url
+  story: 获取 MV 播放地址
+  title: 获取 MV 播放地址
+  request:
+    method: get
+    url: http://localhost:3000/mv/url
+    params:
+      id: 5436712
+  validate:
+    code: 200
+
+- feature: get_mv_url_with_resolution
+  story: 获取 MV 播放地址（指定分辨率）
+  title: 获取 MV 播放地址（指定分辨率）
+  request:
+    method: get
+    url: http://localhost:3000/mv/url
+    params:
+      id: 10896407
+      r: 1080
+  validate:
+    code: 200

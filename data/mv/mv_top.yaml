@@ -1,0 +1,79 @@
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area:
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行 - 内地
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area: 内地
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行 - 港台
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area: 港台
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行 - 欧美
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area: 欧美
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行 - 日本
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area: 日本
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_mv_top_list
+  story: 获取 mv 排行
+  title: mv 排行 - 韩国
+  request:
+    method: get
+    url: http://localhost:3000/top/mv
+    params:
+      area: 韩国
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+
