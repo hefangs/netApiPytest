@@ -1,0 +1,19 @@
+- feature: get_recommended_videos
+  story: 获取推荐视频
+  title: 获取推荐视频(offset)
+  request:
+    method: get
+    url: http://localhost:3000/video/timeline/recommend
+    params:
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_recommended_videos
+  story: 获取推荐视频
+  title: 获取推荐视频 (no params)
+  request:
+    method: get
+    url: http://localhost:3000/video/timeline/recommend
+  validate:
+    code: 200

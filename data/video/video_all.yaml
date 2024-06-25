@@ -1,0 +1,21 @@
+- feature: get_all_videos
+  story: 获取全部视频列表
+  title: 获取全部视频列表(offset)
+  request:
+    method: get
+    url: http://localhost:3000/video/timeline/all
+    params:
+      offset: 0
+  validate:
+    code: 200
+
+
+- feature: get_all_videos
+  story: 获取全部视频列表
+  title: 获取全部视频列表(no params)
+  request:
+    method: get
+    url: http://localhost:3000/video/timeline/all
+    params:
+  validate:
+    code: 200
