@@ -115,3 +115,85 @@ class TestAlbum:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_list.yaml')))
+	def test_album_list(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album list with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_songsaleboard.yaml')))
+	def test_album_songsaleboard(self, args, session):
+		url = args['request']['url']
+		params = args['request'].get('params')
+		if params is None:
+			res = session.get(url)
+			logger.info(f"Testing album songsaleboard with URL: {url}")
+		else:
+			logger.info(f"Testing album songsaleboard with URL: {url} and params: {params}")
+			res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_list_style.yaml')))
+	def test_album_list_style(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album list style with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'album_detail.yaml')))
+	def test_album_detail(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing album detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'digitalalbum_purchased.yaml')))
+	def test_digitalalbum_purchased(self, args, session):
+		url = args['request']['url']
+		params = args['request'].get('params')
+		logger.info(f"Testing digitalAlbum purchased with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'album', 'record_recent_album.yaml')))
+	def test_record_recent_album(self, args, session):
+		url = args['request']['url']
+		params = args['request'].get('params')
+		logger.info(f"Testing record recent album with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

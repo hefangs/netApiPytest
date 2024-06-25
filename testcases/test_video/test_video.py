@@ -193,3 +193,16 @@ class TestVideo:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'video', 'record_recent_video.yaml')))
+	def test_record_recent_video(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing record recent video with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

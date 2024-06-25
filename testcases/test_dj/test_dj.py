@@ -463,3 +463,16 @@ class TestDj:
 		except Exception as e:
 			logger.error(f"Request Failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'dj', 'record_recent_dj.yaml')))
+	def test_record_recent_dj(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		res = session.get(url, params=params)
+		logger.info(f"Testing record_recent_dj with URL: {url} and params: {params}")
+		try:
+			res.raise_for_status()
+			logger.info(f"Response : {res.json()}")
+		except Exception as e:
+			logger.error(f"Request Failed: {e}")
+			raise

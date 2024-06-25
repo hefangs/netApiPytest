@@ -304,3 +304,55 @@ class TestOther:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'music_calendar.yaml')))
+	def test_music_calendar(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  music calendar with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'mlog_play_url.yaml')))
+	def test_mlog_play_url(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  mlog play url with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'convert_mlog_to_video.yaml')))
+	def test_convert_mlog_to_video(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  convert mlog to video with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'record_recent_voice.yaml')))
+	def test_record_recent_voice(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing  record recent voice with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

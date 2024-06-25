@@ -1,0 +1,70 @@
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字单曲周榜单(no params)
+  request:
+    method: get
+    url: http://localhost:3000/album/songsaleboard
+  validate:
+    code: 200
+
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑总榜单（total）
+  request:
+    method: get
+    url: http://localhost:3000/album/songsaleboard
+    params:
+      type: total
+      year: 2024
+      albumType: 0
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑年度榜单(year)
+  request:
+    method: get
+    url: http://localhost:3000/album/songsaleboard
+    params:
+      type: year
+      year: 2024
+      albumType: 0
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字单曲周榜单(week)
+  request:
+    method: get
+    url: http://localhost:3000/album/songsaleboard
+    params:
+      type: week
+      year: 2024
+      albumType: 0
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字单曲周榜单(week)
+  request:
+    method: get
+    url: http://localhost:3000/album/songsaleboard
+    params:
+      type: daily
+      year: 2024
+      albumType: 0
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+

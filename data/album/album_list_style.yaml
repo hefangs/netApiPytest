@@ -1,0 +1,51 @@
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑榜单
+  request:
+    method: get
+    url: http://localhost:3000/album/list/style
+    params:
+      area: Z_H  # 华语地区
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑榜单
+  request:
+    method: get
+    url: http://localhost:3000/album/list/style
+    params:
+      area: E_A  # 欧美地区
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑榜单
+  request:
+    method: get
+    url: http://localhost:3000/album/list/style
+    params:
+      area: KR  # 韩国地区
+      limit: 30
+      offset: 0
+  validate:
+    code: 200
+
+- feature: get_album_and_song_sales_board
+  story: 数字专辑&数字单曲-榜单
+  title: 获取数字专辑榜单
+  request:
+    method: get
+    url: http://localhost:3000/album/list/style
+    params:
+      area: JP  # 日本地区
+      limit: 30
+      offset: 0
+  validate:
+    code: 200

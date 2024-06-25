@@ -234,3 +234,16 @@ class TestSong:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'song', 'record_recent_song.yaml')))
+	def test_record_recent_song(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing record recent song with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response :{res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

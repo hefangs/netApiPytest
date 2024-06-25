@@ -1,0 +1,11 @@
+- feature: get_artist_new_mvs
+  story: 获取关注歌手新 MV
+  title: 获取关注歌手新 MV 接口
+  request:
+    method: get
+    url: http://localhost:3000/artist/new/mv
+    params:
+      limit: 20
+      before:
+  validate:
+    code: 200

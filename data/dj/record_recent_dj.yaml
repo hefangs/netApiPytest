@@ -1,0 +1,10 @@
+- feature: get_recently_played_podcasts
+  story: retrieve_recently_played_podcasts
+  title: 获取最近播放的播客接口
+  request:
+    method: get
+    url: http://localhost:3000/record/recent/dj
+    params:
+      limit: 100
+  validate:
+    code: 200

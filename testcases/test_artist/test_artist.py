@@ -9,6 +9,7 @@
 import logging
 import os.path
 import random
+import time
 
 import pytest
 
@@ -188,6 +189,101 @@ class TestArtist:
 		url = args['request']['url']
 		params = args['request']['params']
 		logger.info(f"Testing artist hot with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_new_songs.yaml')))
+	def test_artist_new_songs(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		if 'before' in params:
+			params['before'] = params.get('before') or int(time.time() * 1000)
+		logger.info(f"Testing artist new songs with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_new_mvs.yaml')))
+	def test_artist_new_mvs(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		if 'before' in params:
+			params['before'] = params.get('before') or int(time.time() * 1000)
+		logger.info(f"Testing artist new mvs with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_fans.yaml')))
+	def test_artist_fans(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist fans with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_follow_count.yaml')))
+	def test_artist_follow_count(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist follow count with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'digitalAlbum_detail.yaml')))
+	def test_digital_album_detail(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing digitalAlbum detail with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'digitalAlbum_sales.yaml')))
+	def test_digital_album_sales(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing digitalAlbum sales with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'artist', 'artist_video.yaml')))
+	def test_artist_video(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing artist video with URL: {url} and params: {params}")
 		res = session.get(url, params=params)
 		try:
 			res.raise_for_status()

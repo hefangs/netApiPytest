@@ -534,3 +534,15 @@ class TestUser:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'setting.yaml')))
+	def test_user_setting(self, args, session):
+		url = args['request']['url']
+		logger.info(f"Testing user setting with URL: {url}")
+		res = session.get(url)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

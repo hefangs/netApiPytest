@@ -1,0 +1,13 @@
+- feature: send_private_message_with_album
+  story: 发送私信(带专辑)
+  title: 发送单个私信(带专辑)
+  request:
+    method: get
+    url: http://localhost:3000/send/album
+    params:
+      user_ids: 2082221
+      id: 34543578
+      msg:
+  validate:
+    code: 200
+

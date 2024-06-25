@@ -1,0 +1,12 @@
+- feature: get_private_message_history
+  story: 私信内容
+  title: 获取私信内容
+  request:
+    method: get
+    url: http://localhost:3000/msg/private/history
+    params:
+      uid: ${extract(uid)}
+      limit: 30
+      before:
+  validate:
+    code: 200

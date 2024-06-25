@@ -1,0 +1,11 @@
+- feature: get_mentions
+  story: 通知 - @我
+  title: 获取@我数据
+  request:
+    method: get
+    url: http://localhost:3000/msg/forwards
+    params:
+      limit: 30
+      offset: 0
+  validate:
+    code: 200

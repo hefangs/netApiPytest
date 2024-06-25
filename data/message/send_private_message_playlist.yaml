@@ -1,0 +1,13 @@
+- feature: send_private_message_with_song
+  story: 发送私信(带歌曲)
+  title: 发送单个私信(带歌曲)
+  request:
+    method: get
+    url: http://localhost:3000/send/playlist
+    params:
+      user_ids: 1452176465
+      playlist: 893126993
+      msg:
+  validate:
+    code: 200
+

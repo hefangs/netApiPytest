@@ -1,0 +1,10 @@
+- feature: get_recently_played_songs
+  story: retrieve_recently_played_songs
+  title: 获取最近播放的歌曲接口
+  request:
+    method: get
+    url: http://localhost:3000/record/recent/song
+    params:
+      limit: 100
+  validate:
+    code: 200
