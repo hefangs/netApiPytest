@@ -148,9 +148,13 @@ class TestOther:
 	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'other', 'banner.yaml')))
 	def test_banner(self, args, session):
 		url = args['request']['url']
-		params = args['request']['params']
-		logger.info(f"Testing  banner with URL: {url} and params: {params}")
-		res = session.get(url)
+		params = args['request'].get('params')
+		if params is None:
+			logger.info(f"Testing  banner with URL: {url} ")
+			res = session.get(url)
+		else:
+			logger.info(f"Testing  banner with URL: {url} and params: {params}")
+			res = session.get(url)
 		try:
 			res.raise_for_status()
 			logger.info(f"Response: {res.json()}")
