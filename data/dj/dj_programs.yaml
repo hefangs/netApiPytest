@@ -1,0 +1,40 @@
+- feature: get_dj_programs_desc
+  story: 获取电台节目列表（降序）
+  title: 电台节目列表 - 降序
+  request:
+    method: get
+    url: http://localhost:3000/dj/program
+    params:
+      rid: 336355127
+  validate:
+    code: 200
+
+
+- feature: get_dj_programs
+  story: 获取电台节目列表（默认降序）
+  title: 电台节目列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/program
+    params:
+      rid: 336355127
+      limit: 30
+      offset: 0
+      asc: false
+  validate:
+    code: 200
+
+- feature: get_dj_programs_asc
+  story: 获取电台节目列表（升序）
+  title: 电台节目列表 - 升序
+  request:
+    method: get
+    url: http://localhost:3000/dj/program
+    params:
+      rid: 336355127
+      limit: 30
+      offset: 0
+      asc: true
+  validate:
+    code: 200
+

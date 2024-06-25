@@ -1,0 +1,20 @@
+- feature: get_popular_radio_stations
+  story: 获取热门电台
+  title: 热门电台列表(on params)
+  request:
+    method: get
+    url: http://localhost:3000/dj/hot
+  validate:
+    code: 200
+
+- feature: get_popular_radio_stations
+  story: 获取热门电台
+  title: 热门电台列表(limit& offset)
+  request:
+    method: get
+    url: http://localhost:3000/dj/hot
+    params:
+      limit: 30
+      offset: 0
+  validate:
+    code: 200

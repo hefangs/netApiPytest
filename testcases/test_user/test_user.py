@@ -521,3 +521,16 @@ class TestUser:
 		except Exception as e:
 			logger.error(f"Request failed: {e}")
 			raise
+	
+	@pytest.mark.parametrize('args', utils.read_file(os.path.join(os.getcwd(), 'data', 'user', 'audio.yaml')))
+	def test_user_audio(self, args, session):
+		url = args['request']['url']
+		params = args['request']['params']
+		logger.info(f"Testing user audio with URL: {url} and params: {params}")
+		res = session.get(url, params=params)
+		try:
+			res.raise_for_status()
+			logger.info(f"Response: {res.json()}")
+		except Exception as e:
+			logger.error(f"Request failed: {e}")
+			raise

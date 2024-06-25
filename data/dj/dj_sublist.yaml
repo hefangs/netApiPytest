@@ -1,0 +1,8 @@
+- feature: get_subscribed_dj_list
+  story: 获取订阅的电台列表
+  title: 订阅的电台列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/sublist
+  validate:
+    code: 200

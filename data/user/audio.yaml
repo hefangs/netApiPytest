@@ -1,0 +1,10 @@
+- feature: get_user_radio_stations
+  story: 获取用户创建的电台
+  title: 用户电台列表
+  request:
+    method: get
+    url: http://localhost:3000/user/audio
+    params:
+      uid: 369410421
+  validate:
+    code: 200

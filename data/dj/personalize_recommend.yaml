@@ -1,0 +1,19 @@
+- feature: get_personalized_dj_recommendations
+  story: 获取电台个性推荐列表
+  title: 电台个性推荐(limit)
+  request:
+    method: get
+    url: http://localhost:3000/dj/personalize/recommend
+    params:
+      limit: 6
+  validate:
+    code: 200
+
+- feature: get_personalized_dj_recommendations
+  story: 获取电台个性推荐列表
+  title: 电台个性推荐(no params)
+  request:
+    method: get
+    url: http://localhost:3000/dj/personalize/recommend
+  validate:
+    code: 200

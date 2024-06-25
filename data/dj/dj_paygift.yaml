@@ -1,0 +1,21 @@
+- feature: get_paygift_dj_list
+  story: 获取付费精选的电台列表
+  title: 付费精选电台列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/paygift
+  validate:
+    code: 200
+
+
+- feature: get_paygift_dj_list
+  story: 获取付费精选的电台列表
+  title: 付费精选电台列表
+  request:
+    method: get
+    url: http://localhost:3000/dj/paygift
+    params:
+      limit: 30
+      offset: 0
+  validate:
+    code: 200

@@ -1,0 +1,22 @@
+- feature: get_newcomer_anchor_toplist_without_limit
+  story: 获取主播新人榜（不传参数）
+  title: 主播新人榜（不传参数）
+  request:
+    method: get
+    url: http://localhost:3000/dj/toplist/newcomer
+  validate:
+    code: 200
+  
+- feature: get_newcomer_anchor_toplist
+  story: 获取主播新人榜
+  title: 主播新人榜
+  request:
+    method: get
+    url: http://localhost:3000/dj/toplist/newcomer
+    params:
+      limit: 100
+  validate:
+    code: 200
+
+
+
