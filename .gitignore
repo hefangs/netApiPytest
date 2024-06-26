@@ -1,6 +1,8 @@
 /logs/
-**/__pycache__/
 .idea/
 .vscode/
 temp/
 report/
+__pycache__/
+**/__pycache__/
+*.pyc
