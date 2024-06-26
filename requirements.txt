@@ -1,3 +1,4 @@
+# pip install -r requirements.txt
 allure-pytest
 pytest-html
 pytest-rerunfailures
@@ -6,4 +7,4 @@ pytest-ordering
 pytest
 PyYAML
 requests
-# pip install -r requirements.txt
+jsonpath-ng
