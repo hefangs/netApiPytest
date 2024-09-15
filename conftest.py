@@ -72,7 +72,7 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
 		return
 	
 	# 重新登录，获取新的token和cookie
-	base_url = 'http://localhost:3000'
+	base_url = 'http://106.15.79.229:3000'
 	url = base_url + '/login/cellphone'
 	phone = 15000840699
 	password = 'hf15000840699'
