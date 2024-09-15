@@ -3,7 +3,7 @@
   title: 签到（web/PC端）
   request:
     method: get
-    url: http://localhost:3000/daily_signin
+    url: http://106.15.79.229:3000/daily_signin
     params:
       type: 1
   validate:

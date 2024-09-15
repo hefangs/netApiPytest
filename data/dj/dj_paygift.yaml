@@ -3,7 +3,7 @@
   title: 付费精选电台列表
   request:
     method: get
-    url: http://localhost:3000/dj/paygift
+    url: http://106.15.79.229:3000/dj/paygift
   validate:
     code: 200
 
@@ -13,7 +13,7 @@
   title: 付费精选电台列表
   request:
     method: get
-    url: http://localhost:3000/dj/paygift
+    url: http://106.15.79.229:3000/dj/paygift
     params:
       limit: 30
       offset: 0

@@ -3,7 +3,7 @@
   title: 获取相似 MV（默认）
   request:
     method: get
-    url: http://localhost:3000/simi/mv
+    url: http://106.15.79.229:3000/simi/mv
     params:
       mvid: 5436712
   validate:

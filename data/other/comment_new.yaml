@@ -3,7 +3,7 @@
   title: 获取新版评论（按推荐排序 - 分页）
   request:
     method: get
-    url: http://localhost:3000/comment/new
+    url: http://106.15.79.229:3000/comment/new
     params:
       id: 1873321491
       type: 0
@@ -18,7 +18,7 @@
   title: 获取新版评论（按热度排序 - 分页）
   request:
     method: get
-    url: http://localhost:3000/comment/new
+    url: http://106.15.79.229:3000/comment/new
     params:
       id: 1873321491
       type: 0
@@ -34,7 +34,7 @@
   title: 获取新版评论（按时间排序 - 分页）
   request:
     method: get
-    url: http://localhost:3000/comment/new
+    url: http://106.15.79.229:3000/comment/new
     params:
       id: 1407551413
       type: 0

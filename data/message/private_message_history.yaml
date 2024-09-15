@@ -3,7 +3,7 @@
   title: 获取私信内容
   request:
     method: get
-    url: http://localhost:3000/msg/private/history
+    url: http://106.15.79.229:3000/msg/private/history
     params:
       uid: ${extract(uid)}
       limit: 30

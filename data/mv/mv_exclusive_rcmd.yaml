@@ -3,7 +3,7 @@
   title: 网易出品 MV
   request:
     method: get
-    url: http://localhost:3000/mv/exclusive/rcmd
+    url: http://106.15.79.229:3000/mv/exclusive/rcmd
     params:
       limit: 30
       offset: 0

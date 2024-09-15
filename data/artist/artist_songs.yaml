@@ -3,7 +3,7 @@
   title: 获取歌手按热门排序的全部歌曲
   request:
     method: get
-    url: http://localhost:3000/artist/songs
+    url: http://106.15.79.229:3000/artist/songs
     params:
       id: 222871
       order: hot
@@ -17,7 +17,7 @@
   title: 获取歌手按时间排序的全部歌曲
   request:
     method: get
-    url: http://localhost:3000/artist/songs
+    url: http://106.15.79.229:3000/artist/songs
     params:
       id: 222871
       order: time

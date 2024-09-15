@@ -3,7 +3,7 @@
   title: 收藏歌单
   request:
     method: get
-    url: http://localhost:3000/playlist/subscribe
+    url: http://106.15.79.229:3000/playlist/subscribe
     params:
       t: 1
       id: 2312165875
@@ -15,7 +15,7 @@
   title: 取消收藏歌单
   request:
     method: get
-    url: http://localhost:3000/playlist/subscribe
+    url: http://106.15.79.229:3000/playlist/subscribe
     params:
       t: 2
       id: 2312165875

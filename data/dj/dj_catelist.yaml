@@ -3,6 +3,6 @@
   title: 电台分类
   request:
     method: get
-    url: http://localhost:3000/dj/catelist
+    url: http://106.15.79.229:3000/dj/catelist
   validate:
     code: 200

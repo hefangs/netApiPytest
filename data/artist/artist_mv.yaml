@@ -3,7 +3,7 @@
   title: 获取歌手 MV（默认）
   request:
     method: get
-    url: http://localhost:3000/artist/mv
+    url: http://106.15.79.229:3000/artist/mv
     params:
       id: 6452
   validate:

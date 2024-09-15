@@ -3,7 +3,7 @@
   title: 听歌打卡
   request:
     method: get
-    url: http://localhost:3000/scrobble
+    url: http://106.15.79.229:3000/scrobble
     params:
       id: 518066366
       sourceid: 36780169

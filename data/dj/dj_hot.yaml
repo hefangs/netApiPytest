@@ -3,7 +3,7 @@
   title: 热门电台列表(on params)
   request:
     method: get
-    url: http://localhost:3000/dj/hot
+    url: http://106.15.79.229:3000/dj/hot
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 热门电台列表(limit& offset)
   request:
     method: get
-    url: http://localhost:3000/dj/hot
+    url: http://106.15.79.229:3000/dj/hot
     params:
       limit: 30
       offset: 0

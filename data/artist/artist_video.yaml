@@ -3,7 +3,7 @@
   title: 获取歌手视频接口（时间排序）
   request:
     method: get
-    url: http://localhost:3000/artist/video
+    url: http://106.15.79.229:3000/artist/video
     params:
       id: 2116
       size: 10
@@ -17,7 +17,7 @@
   title: 获取歌手视频接口（热度排序）
   request:
     method: get
-    url: http://localhost:3000/artist/video
+    url: http://106.15.79.229:3000/artist/video
     params:
       id: 2116
       size: 10

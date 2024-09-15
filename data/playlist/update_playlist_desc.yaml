@@ -3,7 +3,7 @@
   title: 更新歌单描述
   request:
     method: get
-    url: http://localhost:3000/playlist/desc/update
+    url: http://106.15.79.229:3000/playlist/desc/update
     params:
       id: 10178922332
       desc: 我的新歌单

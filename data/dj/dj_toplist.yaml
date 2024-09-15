@@ -3,7 +3,7 @@
   title: 新晋电台榜
   request:
     method: get
-    url: http://localhost:3000/dj/toplist
+    url: http://106.15.79.229:3000/dj/toplist
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 新晋电台榜
   request:
     method: get
-    url: http://localhost:3000/dj/toplist
+    url: http://106.15.79.229:3000/dj/toplist
     params:
       type: new
       limit: 100
@@ -25,7 +25,7 @@
   title: 热门电台榜
   request:
     method: get
-    url: http://localhost:3000/dj/toplist
+    url: http://106.15.79.229:3000/dj/toplist
     params:
       type: hot
       limit: 100

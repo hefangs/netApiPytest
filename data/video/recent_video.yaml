@@ -3,6 +3,6 @@
   title: 获取最近播放的视频
   request:
     method: get
-    url: http://localhost:3000/playlist/video/recent
+    url: http://106.15.79.229:3000/playlist/video/recent
   validate:
     code: 200

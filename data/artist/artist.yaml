@@ -3,7 +3,7 @@
   title: 获得歌手部分信息和热门歌曲
   request:
     method: get
-    url: http://localhost:3000/artists
+    url: http://106.15.79.229:3000/artists
     params:
       id: 6452
   validate:

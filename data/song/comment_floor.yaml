@@ -3,7 +3,7 @@
   title: 获取楼层评论（默认）
   request:
     method: get
-    url: http://localhost:3000/comment/floor
+    url: http://106.15.79.229:3000/comment/floor
     params:
       parentCommentId: 7360506265
       id: 1877996649
@@ -16,7 +16,7 @@
   title: 获取楼层评论（限制数量）
   request:
     method: get
-    url: http://localhost:3000/comment/floor
+    url: http://106.15.79.229:3000/comment/floor
     params:
       parentCommentId: 7360506265
       id: 1877996649
@@ -30,7 +30,7 @@
   title: 获取楼层评论（分页 - 上一页最后一项的时间）
   request:
     method: get
-    url: http://localhost:3000/comment/floor
+    url: http://106.15.79.229:3000/comment/floor
     params:
       parentCommentId: 7360506265
       id: 1877996649
@@ -44,7 +44,7 @@
   title: 获取楼层评论（分页 - 上一页最后一项的时间）
   request:
     method: get
-    url: http://localhost:3000/comment/floor
+    url: http://106.15.79.229:3000/comment/floor
     params:
       parentCommentId: 7360506265
       id: 1877996649

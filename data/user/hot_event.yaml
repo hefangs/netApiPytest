@@ -3,7 +3,7 @@
   title: 获取话题详情热门动态
   request:
     method: get
-    url: http://localhost:3000/topic/detail/event/hot
+    url: http://106.15.79.229:3000/topic/detail/event/hot
     params:
       actid: ${extract(actid)}
   validate:

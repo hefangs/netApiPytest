@@ -3,7 +3,7 @@
   title: 获取相似歌手（默认）
   request:
     method: get
-    url: http://localhost:3000/simi/artist
+    url: http://106.15.79.229:3000/simi/artist
     params:
       id: 6452
   validate:

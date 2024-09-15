@@ -3,7 +3,7 @@
   title: 登录状态
   request:
     method: get
-    url: http://localhost:3000/login/status
+    url: http://106.15.79.229:3000/login/status
   extract:
     key: $.data.account.id
   validate:

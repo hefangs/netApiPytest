@@ -3,7 +3,7 @@
   title: 收藏MV
   request:
     method: post
-    url: http://localhost:3000/mv/sub
+    url: http://106.15.79.229:3000/mv/sub
     params:
       mvid: 395035
       t: 1
@@ -15,7 +15,7 @@
   title: 取消收藏MV
   request:
     method: post
-    url: http://localhost:3000/mv/sub
+    url: http://106.15.79.229:3000/mv/sub
     params:
       mvid: 395035
       t: 0

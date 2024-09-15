@@ -3,7 +3,7 @@
   title: 推荐新音乐
   request:
     method: get
-    url: http://localhost:3000/personalized/newsong
+    url: http://106.15.79.229:3000/personalized/newsong
     params:
       limit: 10
   validate:

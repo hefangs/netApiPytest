@@ -3,7 +3,7 @@
   title: 获取已收藏专辑列表（默认）
   request:
     method: get
-    url: http://localhost:3000/album/sublist
+    url: http://106.15.79.229:3000/album/sublist
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 获取已收藏专辑列表（限制数量）
   request:
     method: get
-    url: http://localhost:3000/album/sublist
+    url: http://106.15.79.229:3000/album/sublist
     params:
       limit: 25
   validate:
@@ -23,7 +23,7 @@
   title: 获取已收藏专辑列表（分页）
   request:
     method: get
-    url: http://localhost:3000/album/sublist
+    url: http://106.15.79.229:3000/album/sublist
     params:
       offset: 0
   validate:
@@ -34,7 +34,7 @@
   title: 获取已收藏专辑列表（参数全部都传）
   request:
     method: get
-    url: http://localhost:3000/album/sublist
+    url: http://106.15.79.229:3000/album/sublist
     params:
       limit: 25
       offset: 0

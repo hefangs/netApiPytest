@@ -3,7 +3,7 @@
   title: 主播新人榜（不传参数）
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/newcomer
+    url: http://106.15.79.229:3000/dj/toplist/newcomer
   validate:
     code: 200
   
@@ -12,7 +12,7 @@
   title: 主播新人榜
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/newcomer
+    url: http://106.15.79.229:3000/dj/toplist/newcomer
     params:
       limit: 100
   validate:

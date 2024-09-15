@@ -3,7 +3,7 @@
   title: 获取歌手专辑（默认）
   request:
     method: get
-    url: http://localhost:3000/artist/album
+    url: http://106.15.79.229:3000/artist/album
     params:
       id: 6452
   validate:
@@ -14,7 +14,7 @@
   title: 获取歌手专辑（限制数量）
   request:
     method: get
-    url: http://localhost:3000/artist/album
+    url: http://106.15.79.229:3000/artist/album
     params:
       id: 6452
       limit: 0
@@ -26,7 +26,7 @@
   title: 获取歌手专辑（分页）
   request:
     method: get
-    url: http://localhost:3000/artist/album
+    url: http://106.15.79.229:3000/artist/album
     params:
       id: 6452
       offset: 30
@@ -38,7 +38,7 @@
   title: 获取歌手专辑（传入所有参数）
   request:
     method: get
-    url: http://localhost:3000/artist/album
+    url: http://106.15.79.229:3000/artist/album
     params:
       id: 6452
       limit: 30

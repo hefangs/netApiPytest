@@ -5,7 +5,7 @@
   title: 收藏视频
   request:
     method: get
-    url: http://localhost:3000/video/sub
+    url: http://106.15.79.229:3000/video/sub
     params:
       id: 7E396BB65AE090AE1632032E4557CB90
       t: 1
@@ -17,7 +17,7 @@
   title: 取消收藏视频
   request:
     method: get
-    url: http://localhost:3000/video/sub
+    url: http://106.15.79.229:3000/video/sub
     params:
       id: 7E396BB65AE090AE1632032E4557CB90
       t: 0

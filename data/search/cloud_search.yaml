@@ -3,7 +3,7 @@
   title: 搜索音乐（仅关键词）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
   validate:
@@ -14,7 +14,7 @@
   title: 搜索音乐（关键词 + 返回数量）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       limit: 30
@@ -26,7 +26,7 @@
   title: 搜索音乐（关键词 + 偏移数量）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       offset: 0
@@ -38,7 +38,7 @@
   title: 搜索音乐（关键词 + 搜索类型）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       type: 1
@@ -50,7 +50,7 @@
   title: 搜索音乐（关键词 + 返回数量 + 偏移数量）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       limit: 30
@@ -63,7 +63,7 @@
   title: 搜索音乐（关键词 + 返回数量 + 搜索类型）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       limit: 30
@@ -76,7 +76,7 @@
   title: 搜索音乐（关键词 + 偏移数量 + 搜索类型）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       offset: 0
@@ -89,7 +89,7 @@
   title: 搜索音乐（关键词 + 返回数量 + 偏移数量 + 搜索类型）
   request:
     method: get
-    url: http://localhost:3000/cloudsearch
+    url: http://106.15.79.229:3000/cloudsearch
     params:
       keywords: "让我一次爱个够"
       limit: 30

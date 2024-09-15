@@ -4,7 +4,7 @@
   title: 获取单个音乐的URL
   request:
     method: get
-    url: http://localhost:3000/song/url
+    url: http://106.15.79.229:3000/song/url
     params:
       id: 406089317
   validate:
@@ -16,7 +16,7 @@
   title: 获取多个音乐的URL
   request:
     method: get
-    url: http://localhost:3000/song/url
+    url: http://106.15.79.229:3000/song/url
     params:
       id: 406089317,29723016
   validate:
@@ -28,7 +28,7 @@
   title: 获取音乐URL（999000码率）
   request:
     method: get
-    url: http://localhost:3000/song/url
+    url: http://106.15.79.229:3000/song/url
     params:
       id: 406089317
       br: 999000
@@ -41,7 +41,7 @@
   title: 获取音乐URL（192k码率）
   request:
     method: get
-    url: http://localhost:3000/song/url
+    url: http://106.15.79.229:3000/song/url
     params:
       id: 406089317,29723016
       br: 999000

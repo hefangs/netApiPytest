@@ -3,6 +3,6 @@
   title: 获取私人 FM
   request:
     method: get
-    url: http://localhost:3000/personal_fm
+    url: http://106.15.79.229:3000/personal_fm
   validate:
     code: 200

@@ -3,6 +3,6 @@
   title: 独家放送(入口列表)
   request:
     method: get
-    url: http://localhost:3000/personalized/privatecontent
+    url: http://106.15.79.229:3000/personalized/privatecontent
   validate:
     code: 200

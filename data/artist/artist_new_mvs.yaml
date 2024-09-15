@@ -3,7 +3,7 @@
   title: 获取关注歌手新 MV 接口
   request:
     method: get
-    url: http://localhost:3000/artist/new/mv
+    url: http://106.15.79.229:3000/artist/new/mv
     params:
       limit: 20
       before:

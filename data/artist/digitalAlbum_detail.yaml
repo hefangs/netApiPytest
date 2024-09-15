@@ -3,7 +3,7 @@
   title: 获取数字专辑详情接口
   request:
     method: get
-    url: http://localhost:3000/digitalAlbum/detail
+    url: http://106.15.79.229:3000/digitalAlbum/detail
     params:
       id: 120605500
   validate:

@@ -3,7 +3,7 @@
   title: 获取新歌速递（全部）
   request:
     method: get
-    url: http://localhost:3000/top/song
+    url: http://106.15.79.229:3000/top/song
     params:
       type: 0
   validate:
@@ -14,7 +14,7 @@
   title: 获取新歌速递（华语）
   request:
     method: get
-    url: http://localhost:3000/top/song
+    url: http://106.15.79.229:3000/top/song
     params:
       type: 7
   validate:
@@ -25,7 +25,7 @@
   title: 获取新歌速递（欧美）
   request:
     method: get
-    url: http://localhost:3000/top/song
+    url: http://106.15.79.229:3000/top/song
     params:
       type: 96
   validate:
@@ -36,7 +36,7 @@
   title: 获取新歌速递（日本）
   request:
     method: get
-    url: http://localhost:3000/top/song
+    url: http://106.15.79.229:3000/top/song
     params:
       type: 8
   validate:
@@ -47,7 +47,7 @@
   title: 获取新歌速递（韩国）
   request:
     method: get
-    url: http://localhost:3000/top/song
+    url: http://106.15.79.229:3000/top/song
     params:
       type: 16
   validate:

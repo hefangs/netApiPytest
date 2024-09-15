@@ -3,7 +3,7 @@
   title: 视频点赞转发评论数数据
   request:
     method: get
-    url: http://localhost:3000/video/detail/info
+    url: http://106.15.79.229:3000/video/detail/info
     params:
       vid: 89ADDE33C0AAE8EC14B99F6750DB954D
   validate:

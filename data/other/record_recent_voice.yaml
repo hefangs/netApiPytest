@@ -3,7 +3,7 @@
   title: 获取最近播放的声音接口
   request:
     method: get
-    url: http://localhost:3000/record/recent/voice
+    url: http://106.15.79.229:3000/record/recent/voice
     params:
       limit: 100
   validate:

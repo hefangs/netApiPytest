@@ -3,6 +3,6 @@
   title: 获取精品歌单标签列表
   request:
     method: get
-    url: http://localhost:3000/playlist/highquality/tags
+    url: http://106.15.79.229:3000/playlist/highquality/tags
   validate:
     code: 200

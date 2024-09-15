@@ -3,7 +3,7 @@
   title: 获取最近听了这首歌的用户（默认）
   request:
     method: get
-    url: http://localhost:3000/simi/user
+    url: http://106.15.79.229:3000/simi/user
     params:
       id: 347230
   validate:

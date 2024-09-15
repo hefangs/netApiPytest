@@ -3,7 +3,7 @@
   title: 获取视频标签/分类下的视频(all params)
   request:
     method: get
-    url: http://localhost:3000/video/group
+    url: http://106.15.79.229:3000/video/group
     params:
       id: 9104
       offset: 0
@@ -15,7 +15,7 @@
   title: 获取视频标签/分类下的视频(required params)
   request:
     method: get
-    url: http://localhost:3000/video/group
+    url: http://106.15.79.229:3000/video/group
     params:
       id: 9104
   validate:

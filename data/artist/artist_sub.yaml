@@ -3,7 +3,7 @@
   title: 收藏歌手
   request:
     method: get
-    url: http://localhost:3000/artist/sub
+    url: http://106.15.79.229:3000/artist/sub
     params:
       id: 6075
       t: 1
@@ -15,7 +15,7 @@
   title: 取消收藏歌手
   request:
     method: get
-    url: http://localhost:3000/artist/sub
+    url: http://106.15.79.229:3000/artist/sub
     params:
       id: 6075
       t: 0

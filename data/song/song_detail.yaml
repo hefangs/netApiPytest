@@ -3,7 +3,7 @@
   title: 获取单首歌曲详情
   request:
     method: get
-    url: http://localhost:3000/song/detail
+    url: http://106.15.79.229:3000/song/detail
     params:
       ids: 1877996649
   validate:
@@ -14,7 +14,7 @@
   title: 获取多首歌曲详情
   request:
     method: get
-    url: http://localhost:3000/song/detail
+    url: http://106.15.79.229:3000/song/detail
     params:
       ids: 1873321491,16375205
   validate:

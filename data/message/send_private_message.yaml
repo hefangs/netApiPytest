@@ -3,7 +3,7 @@
   title: 发送单个私信
   request:
     method: get
-    url: http://localhost:3000/send/text
+    url: http://106.15.79.229:3000/send/text
     params:
       user_ids: 39577093
       msg:

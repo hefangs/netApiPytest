@@ -3,7 +3,7 @@
   title: 新建歌单
   request:
     method: get
-    url: http://localhost:3000/playlist/create
+    url: http://106.15.79.229:3000/playlist/create
     params:
       name: "我的新歌单"
       type: "NORMAL"

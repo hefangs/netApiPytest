@@ -3,7 +3,7 @@
   title: 获取收藏的MV列表
   request:
     method: get
-    url: http://localhost:3000/mv/sublist
+    url: http://106.15.79.229:3000/mv/sublist
     params:
       limit: 20
       offset: 0

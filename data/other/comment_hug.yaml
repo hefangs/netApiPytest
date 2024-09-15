@@ -3,7 +3,7 @@
   title: 抱一抱评论
   request:
     method: post
-    url: http://localhost:3000/hug/comment
+    url: http://106.15.79.229:3000/hug/comment
     params:
       uid: ${extract(uid)}
       cid: 1167145843

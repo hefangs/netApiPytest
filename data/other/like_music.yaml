@@ -3,7 +3,7 @@
   title: 喜欢音乐
   request:
     method: get
-    url: http://localhost:3000/like
+    url: http://106.15.79.229:3000/like
     params:
       id: 347230
       like: true
@@ -15,7 +15,7 @@
   title: 取消喜欢音乐
   request:
     method: get
-    url: http://localhost:3000/like
+    url: http://106.15.79.229:3000/like
     params:
       id: 347230
       like: false

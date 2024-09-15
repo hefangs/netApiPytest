@@ -3,7 +3,7 @@
   title: 分享电台节目
   request:
     method: get
-    url: http://localhost:3000/share/resource
+    url: http://106.15.79.229:3000/share/resource
     params:
       id: 1367665101
       type: djprogram

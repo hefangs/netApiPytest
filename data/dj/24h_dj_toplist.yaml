@@ -3,7 +3,7 @@
   title: 24小时电台主播榜(no params)
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/hours
+    url: http://106.15.79.229:3000/dj/toplist/hours
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 24小时电台主播榜(limit)
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/hours
+    url: http://106.15.79.229:3000/dj/toplist/hours
     params:
       limit: 100
   validate:

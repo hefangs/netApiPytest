@@ -3,7 +3,7 @@
   title: 获取心动模式/智能播放列表
   request:
     method: get
-    url: http://localhost:3000/playmode/intelligence/list
+    url: http://106.15.79.229:3000/playmode/intelligence/list
     params:
       id: 28302514
       pid: 504353039
@@ -15,7 +15,7 @@
   title: 获取心动模式/智能播放列表 (包含 sid)
   request:
     method: get
-    url: http://localhost:3000/playmode/intelligence/list
+    url: http://106.15.79.229:3000/playmode/intelligence/list
     params:
       id: 28302514
       pid: 504353039

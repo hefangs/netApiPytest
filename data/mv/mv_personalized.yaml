@@ -3,6 +3,6 @@
   title: 推荐 MV
   request:
     method: get
-    url: http://localhost:3000/personalized/mv
+    url: http://106.15.79.229:3000/personalized/mv
   validate:
     code: 200

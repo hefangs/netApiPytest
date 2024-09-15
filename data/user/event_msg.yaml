@@ -3,7 +3,7 @@
   title: 获取动态消息
   request:
     method: get
-    url: http://localhost:3000/event
+    url: http://106.15.79.229:3000/event
     params:
       pagesize: 20
       lasttime: -1

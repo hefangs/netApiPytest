@@ -3,7 +3,7 @@
   title: 给歌曲评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 1873321491
       cid: 5431158953
@@ -17,7 +17,7 @@
   title: 取消给歌曲评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 1873321491
       cid: 5431158953
@@ -31,7 +31,7 @@
   title: 给MV评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 311004
       cid: 28471026
@@ -45,7 +45,7 @@
   title: 取消给MV评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 311004
       cid: 28471026
@@ -59,7 +59,7 @@
   title: 给歌单评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 893126993
       cid: 541513131
@@ -73,7 +73,7 @@
   title: 取消给歌单评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 893126993
       cid: 541513131
@@ -87,7 +87,7 @@
   title: 给专辑评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 3017104
       cid: 11346240
@@ -101,7 +101,7 @@
   title: 取消给专辑评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 3017104
       cid: 11346240
@@ -115,7 +115,7 @@
   title: 给电台节目评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 2538375026
       cid: 6069600181
@@ -129,7 +129,7 @@
   title: 取消给电台节目评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 2538375026
       cid: 6069600181
@@ -143,7 +143,7 @@
   title: 给视频评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 89ADDE33C0AAE8EC14B99F6750DB954D
       cid: 3569758358
@@ -157,7 +157,7 @@
   title: 取消给视频评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 89ADDE33C0AAE8EC14B99F6750DB954D
       cid: 3569758358
@@ -171,7 +171,7 @@
   title: 给动态评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       cid: 5437158321
       threadId: A_EV_2_19714618747_560803159
@@ -185,7 +185,7 @@
   title: 取消给动态评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       cid: 5437158321
       threadId: A_EV_2_19714618747_560803159
@@ -199,7 +199,7 @@
   title: 给电台评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 2538375026
       cid: 6069600181
@@ -213,7 +213,7 @@
   title: 取消给电台评论点赞
   request:
     method: get
-    url: http://localhost:3000/comment/like
+    url: http://106.15.79.229:3000/comment/like
     params:
       id: 2538375026
       cid: 6069600181

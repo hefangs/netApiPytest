@@ -3,6 +3,6 @@
   title: 获取热搜列表(详细)
   request:
     method: get
-    url: http://localhost:3000/search/hot/detail
+    url: http://106.15.79.229:3000/search/hot/detail
   validate:
     code: 200

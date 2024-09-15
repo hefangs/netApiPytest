@@ -3,7 +3,7 @@
   title: 获取用户播放记录
   request:
     method: get
-    url: http://localhost:3000/user/record
+    url: http://106.15.79.229:3000/user/record
     params:
       uid: ${extract(uid)} # 不传type 返回allData
   validate:
@@ -14,7 +14,7 @@
   title: 获取用户播放记录
   request:
     method: get
-    url: http://localhost:3000/user/record
+    url: http://106.15.79.229:3000/user/record
     params:
       uid: ${extract(uid)}
       type: 1  # 只返回 weekData
@@ -26,7 +26,7 @@
   title: 获取用户全部播放记录
   request:
     method: get
-    url: http://localhost:3000/user/record
+    url: http://106.15.79.229:3000/user/record
     params:
       uid: ${extract(uid)}
       type: 0  # 返回 allData

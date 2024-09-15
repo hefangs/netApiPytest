@@ -3,7 +3,7 @@
   title: 关注用户
   request:
     method: get
-    url: http://localhost:3000/follow
+    url: http://106.15.79.229:3000/follow
     params:
       id: 725130
       t: 1  # 关注 (1: 关注, 0: 取消关注)
@@ -15,7 +15,7 @@
   title: 取消关注用户
   request:
     method: get
-    url: http://localhost:3000/follow
+    url: http://106.15.79.229:3000/follow
     params:
       id: 725130
       t: 0  # 取消关注 (1: 关注, 0: 取消关注)

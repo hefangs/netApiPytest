@@ -3,7 +3,7 @@
   title: 更新歌单播放量
   request:
     method: post
-    url: http://localhost:3000/playlist/update/playcount
+    url: http://106.15.79.229:3000/playlist/update/playcount
     params:
       id: 893126993
   validate:

@@ -3,7 +3,7 @@
   title: 获取歌单详情动态信息
   request:
     method: get
-    url: http://localhost:3000/playlist/detail/dynamic
+    url: http://106.15.79.229:3000/playlist/detail/dynamic
     params:
       id: 893126993
   validate:

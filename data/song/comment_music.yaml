@@ -3,7 +3,7 @@
   title: 获取歌曲评论（默认）
   request:
     method: get
-    url: http://localhost:3000/comment/music
+    url: http://106.15.79.229:3000/comment/music
     params:
       id: 186016
   validate:
@@ -14,7 +14,7 @@
   title: 获取歌曲评论（限制数量）
   request:
     method: get
-    url: http://localhost:3000/comment/music
+    url: http://106.15.79.229:3000/comment/music
     params:
       id: 186016
       limit: 1
@@ -26,7 +26,7 @@
   title: 获取歌曲评论（分页 - 偏移数量）
   request:
     method: get
-    url: http://localhost:3000/comment/music
+    url: http://106.15.79.229:3000/comment/music
     params:
       id: 186016
       limit: 20
@@ -39,7 +39,7 @@
   title: 获取歌曲评论（分页 - 上一页最后一项的时间）
   request:
     method: get
-    url: http://localhost:3000/comment/music
+    url: http://106.15.79.229:3000/comment/music
     params:
       id: 186016
       limit: 20

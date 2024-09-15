@@ -3,7 +3,7 @@
   title: 多重匹配搜索
   request:
     method: get
-    url: http://localhost:3000/search/multimatch
+    url: http://106.15.79.229:3000/search/multimatch
     params:
       keywords: "都是你的错"
   validate:

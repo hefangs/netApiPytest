@@ -3,7 +3,7 @@
   title: 删除歌单
   request:
     method: get
-    url: http://localhost:3000/playlist/delete
+    url: http://106.15.79.229:3000/playlist/delete
     params:
       id: ${extract(id)}
   validate:

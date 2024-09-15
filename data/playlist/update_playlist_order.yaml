@@ -3,7 +3,7 @@
   title: 调整歌单顺序
   request:
     method: get
-    url: http://localhost:3000/playlist/order/update
+    url: http://106.15.79.229:3000/playlist/order/update
     params:
       ids: [ 504353039,10178922332,10183262567,12197860746 ]
   validate:

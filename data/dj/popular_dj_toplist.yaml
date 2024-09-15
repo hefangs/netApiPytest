@@ -3,7 +3,7 @@
   title: 最热主播榜（不传参数）
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/popular
+    url: http://106.15.79.229:3000/dj/toplist/popular
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 最热主播榜
   request:
     method: get
-    url: http://localhost:3000/dj/toplist/popular
+    url: http://106.15.79.229:3000/dj/toplist/popular
     params:
       limit: 100
   validate:

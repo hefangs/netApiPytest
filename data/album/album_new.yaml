@@ -3,7 +3,7 @@
   title: 全部新碟 - 默认区域
   request:
     method: get
-    url: http://localhost:3000/album/new
+    url: http://106.15.79.229:3000/album/new
     params:
       area: ALL
       limit: 30
@@ -16,7 +16,7 @@
   title: 全部新碟 - 华语地区
   request:
     method: get
-    url: http://localhost:3000/album/new
+    url: http://106.15.79.229:3000/album/new
     params:
       area: ZH
       limit: 30
@@ -29,7 +29,7 @@
   title: 全部新碟 - 欧美地区
   request:
     method: get
-    url: http://localhost:3000/album/new
+    url: http://106.15.79.229:3000/album/new
     params:
       area: EA
       limit: 30
@@ -42,7 +42,7 @@
   title: 全部新碟 - 韩国地区
   request:
     method: get
-    url: http://localhost:3000/album/new
+    url: http://106.15.79.229:3000/album/new
     params:
       area: KR
       limit: 30
@@ -55,7 +55,7 @@
   title: 全部新碟 - 日本地区
   request:
     method: get
-    url: http://localhost:3000/album/new
+    url: http://106.15.79.229:3000/album/new
     params:
       area: JP
       limit: 30

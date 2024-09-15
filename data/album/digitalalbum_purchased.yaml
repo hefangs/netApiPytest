@@ -3,7 +3,7 @@
   title: 获取我的数字专辑接口
   request:
     method: get
-    url: http://localhost:3000/digitalAlbum/purchased
+    url: http://106.15.79.229:3000/digitalAlbum/purchased
     params:
       limit: 10
   validate:

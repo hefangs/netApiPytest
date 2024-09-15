@@ -3,7 +3,7 @@
   title: 获取歌单详情
   request:
     method: get
-    url: http://localhost:3000/playlist/detail
+    url: http://106.15.79.229:3000/playlist/detail
     params:
       id: 893126993
       s: 8
@@ -15,7 +15,7 @@
   title: 获取歌单详情(不传可选参数)
   request:
     method: get
-    url: http://localhost:3000/playlist/detail
+    url: http://106.15.79.229:3000/playlist/detail
     params:
       id: 893126993
   validate:

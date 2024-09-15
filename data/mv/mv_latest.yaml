@@ -3,7 +3,7 @@
   title: 最新 MV - 全部地区
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 全部
       limit: 30
@@ -15,7 +15,7 @@
   title: 最新 MV - 内地
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 内地
       limit: 30
@@ -27,7 +27,7 @@
   title: 最新 MV - 港台
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 港台
       limit: 30
@@ -39,7 +39,7 @@
   title: 最新 MV - 欧美
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 欧美
       limit: 30
@@ -51,7 +51,7 @@
   title: 最新 MV - 日本
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 日本
       limit: 30
@@ -63,7 +63,7 @@
   title: 最新 MV - 韩国
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
     params:
       area: 韩国
       limit: 30
@@ -75,6 +75,6 @@
   title: 最新 MV (无参数)
   request:
     method: get
-    url: http://localhost:3000/mv/first
+    url: http://106.15.79.229:3000/mv/first
   validate:
     code: 200

@@ -3,7 +3,7 @@
   title: 获取APP首页信息
   request:
     method: get
-    url: http://localhost:3000/homepage/block/page
+    url: http://106.15.79.229:3000/homepage/block/page
     params:
       refresh: false
   validate:
@@ -14,7 +14,7 @@
   title: 获取APP首页信息（刷新数据）
   request:
     method: get
-    url: http://localhost:3000/homepage/block/page
+    url: http://106.15.79.229:3000/homepage/block/page
     params:
       refresh: true
   validate:

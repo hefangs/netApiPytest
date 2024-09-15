@@ -3,7 +3,7 @@
   title: 订阅电台
   request:
     method: get
-    url: http://localhost:3000/dj/sub
+    url: http://106.15.79.229:3000/dj/sub
     params:
       rid: 336355127
       t: 1  # 订阅电台，0 为取消订阅
@@ -15,7 +15,7 @@
   title: 取消订阅电台
   request:
     method: get
-    url: http://localhost:3000/dj/sub
+    url: http://106.15.79.229:3000/dj/sub
     params:
       rid: 336355127
       t: 0  # 取消订阅电台，0 为取消订阅

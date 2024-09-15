@@ -3,7 +3,7 @@
   title: 获取推荐视频(offset)
   request:
     method: get
-    url: http://localhost:3000/video/timeline/recommend
+    url: http://106.15.79.229:3000/video/timeline/recommend
     params:
       offset: 0
   validate:
@@ -14,6 +14,6 @@
   title: 获取推荐视频 (no params)
   request:
     method: get
-    url: http://localhost:3000/video/timeline/recommend
+    url: http://106.15.79.229:3000/video/timeline/recommend
   validate:
     code: 200

@@ -3,7 +3,7 @@
   title: 全部 MV
   request:
     method: get
-    url: http://localhost:3000/mv/all
+    url: http://106.15.79.229:3000/mv/all
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 全部默认参数筛选 MV
   request:
     method: get
-    url: http://localhost:3000/mv/all
+    url: http://106.15.79.229:3000/mv/all
     params:
       area: 全部
       type: 全部

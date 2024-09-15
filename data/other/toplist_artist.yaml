@@ -3,7 +3,7 @@
   title: 华语歌手榜
   request:
     method: get
-    url: http://localhost:3000/toplist/artist
+    url: http://106.15.79.229:3000/toplist/artist
     params:
       type: 1
   validate:
@@ -14,7 +14,7 @@
   title: 欧美歌手榜
   request:
     method: get
-    url: http://localhost:3000/toplist/artist
+    url: http://106.15.79.229:3000/toplist/artist
     params:
       type: 2
   validate:
@@ -25,7 +25,7 @@
   title: 韩国歌手榜
   request:
     method: get
-    url: http://localhost:3000/toplist/artist
+    url: http://106.15.79.229:3000/toplist/artist
     params:
       type: 3
   validate:
@@ -36,7 +36,7 @@
   title: 日本歌手榜
   request:
     method: get
-    url: http://localhost:3000/toplist/artist
+    url: http://106.15.79.229:3000/toplist/artist
     params:
       type: 4
   validate:

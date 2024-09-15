@@ -3,7 +3,7 @@
   title: 获取数字专辑榜单
   request:
     method: get
-    url: http://localhost:3000/album/list/style
+    url: http://106.15.79.229:3000/album/list/style
     params:
       area: Z_H  # 华语地区
       limit: 30
@@ -16,7 +16,7 @@
   title: 获取数字专辑榜单
   request:
     method: get
-    url: http://localhost:3000/album/list/style
+    url: http://106.15.79.229:3000/album/list/style
     params:
       area: E_A  # 欧美地区
       limit: 30
@@ -29,7 +29,7 @@
   title: 获取数字专辑榜单
   request:
     method: get
-    url: http://localhost:3000/album/list/style
+    url: http://106.15.79.229:3000/album/list/style
     params:
       area: KR  # 韩国地区
       limit: 30
@@ -42,7 +42,7 @@
   title: 获取数字专辑榜单
   request:
     method: get
-    url: http://localhost:3000/album/list/style
+    url: http://106.15.79.229:3000/album/list/style
     params:
       area: JP  # 日本地区
       limit: 30

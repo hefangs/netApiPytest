@@ -3,7 +3,7 @@
   title: 电台节目榜列表(no params)
   request:
     method: get
-    url: http://localhost:3000/dj/program/toplist
+    url: http://106.15.79.229:3000/dj/program/toplist
   validate:
     code: 200
 
@@ -12,7 +12,7 @@
   title: 电台节目榜列表(limit & offset)
   request:
     method: get
-    url: http://localhost:3000/dj/program/toplist
+    url: http://106.15.79.229:3000/dj/program/toplist
     params:
       limit: 100
       offset: 0

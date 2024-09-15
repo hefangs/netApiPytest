@@ -3,7 +3,7 @@
   title: 检查单个音乐是否可用
   request:
     method: get
-    url: http://localhost:3000/check/music
+    url: http://106.15.79.229:3000/check/music
     params:
       id: 29723016
   validate:
@@ -14,7 +14,7 @@
   title: 检查单个音乐是否可用（999000 码率）
   request:
     method: get
-    url: http://localhost:3000/check/music
+    url: http://106.15.79.229:3000/check/music
     params:
       id: 29723016
       br: 999000

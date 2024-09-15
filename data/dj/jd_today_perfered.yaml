@@ -3,6 +3,6 @@
   title: 电台今日优选
   request:
     method: get
-    url: http://localhost:3000/dj/today/perfered
+    url: http://106.15.79.229:3000/dj/today/perfered
   validate:
     code: 200

@@ -3,7 +3,7 @@
   title: 添加歌曲到歌单
   request:
     method: get
-    url: http://localhost:3000/playlist/tracks
+    url: http://106.15.79.229:3000/playlist/tracks
     params:
       op: add
       pid: 504353039
@@ -16,7 +16,7 @@
   title: 从歌单删除歌曲
   request:
     method: get
-    url: http://localhost:3000/playlist/tracks
+    url: http://106.15.79.229:3000/playlist/tracks
     params:
       op: del
       pid: 504353039

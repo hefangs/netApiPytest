@@ -3,7 +3,7 @@
   title: 获取网友精选碟歌单_最热
   request:
     method: get
-    url: http://localhost:3000/top/playlist
+    url: http://106.15.79.229:3000/top/playlist
     params:
       order: hot
       cat: 全部
@@ -17,7 +17,7 @@
   title: 获取网友精选碟歌单_最新
   request:
     method: get
-    url: http://localhost:3000/top/playlist
+    url: http://106.15.79.229:3000/top/playlist
     params:
       order: new
       cat: 全部
