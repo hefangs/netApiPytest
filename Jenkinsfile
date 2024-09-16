@@ -5,7 +5,7 @@ pipeline {
         stage('Hello') {
             steps {
                 sh 'pwd'
-                sh 'ls-al'
+                sh 'ls -al'
             }
         }
     }
