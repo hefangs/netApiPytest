@@ -6,7 +6,10 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -al'
+                withDockerContainer('node') {
+                    sh 'node -v'
+                }
             }
-        }
+        }          
     }
 }
