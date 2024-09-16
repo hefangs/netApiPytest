@@ -1,16 +1,11 @@
 pipeline {
     agent any
-
     stages {
-        stage('stage 1') {
+        stage('Check Python and Pip') {   // 检查 Python 和 Pip 是否存在
             steps {
-                sh 'pwd'
-                sh 'ls -al'
-                // 该步骤通常不应该在您的脚本中使用。请参考帮助查看详情。
-                withDockerContainer('node') {
-                    sh 'node -v'
-                }
+                sh 'python --version || python3 --version'  // 检查 Python 版本
+                sh 'pip --version || pip3 --version'        // 检查 Pip 版本
             }
-        }          
+        }
     }
 }
