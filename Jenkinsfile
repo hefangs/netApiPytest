@@ -8,6 +8,7 @@ pipeline {
                 sh 'ls -al'
                 withDockerContainer('node') {
                     sh 'node -v'
+                    sh 'pwd'
                 }
             }
         }          
