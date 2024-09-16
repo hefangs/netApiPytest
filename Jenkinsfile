@@ -10,6 +10,7 @@ pipeline {
         }
         stage('Create Venv') {   
             steps {
+                sh 'python -V'
                 sh 'pwd'
                 sh 'ls'
                 sh 'which python'
