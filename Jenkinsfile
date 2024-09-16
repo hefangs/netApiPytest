@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('demo') {   
+        stage('testcases') {   
             steps {
                 withDockerContainer('python') {
                     sh 'python -V'
@@ -16,6 +16,7 @@ pipeline {
                         which python
                         pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                         pip install -r requirements.txt
+                        pytest testcases
                     '''
                 }
             }
