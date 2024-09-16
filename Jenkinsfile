@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('stage 1') {
             steps {
                 sh 'pwd'
                 sh 'ls -al'
