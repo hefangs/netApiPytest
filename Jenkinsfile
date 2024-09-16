@@ -1,10 +1,10 @@
 pipeline {
     agent any
     stages {
-        stage('Install python') {   
+        stage('Install Python') {   
             steps {
                 withDockerContainer('python') {
-                    sh 'python -v'
+                    sh 'python -version'
                 }
             }
         }
@@ -12,6 +12,20 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls'
+            }
+        }
+        stage('Install Dependencies') {   
+            steps {
+                sh 'pwd'
+                sh 'ls'
+                // sh 'pip install -r requirements.txt'
+            }
+        }
+        stage('Run Tests') {   
+            steps {
+                sh 'pwd'
+                sh 'ls'
+                // sh 'pytest testcases'
             }
         }
     }
