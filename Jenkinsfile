@@ -1,12 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Check') {   
+        stage('Install python') {   
             steps {
                 withDockerContainer('python') {
                     sh 'python -v'
-                    sh 'pip -v'
                 }
+            }
+        }
+        stage('Create Venv') {   
+            steps {
+                sh 'pwd'
+                sh 'ls'
             }
         }
     }
