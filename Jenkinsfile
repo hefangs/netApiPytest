@@ -15,7 +15,7 @@ pipeline {
                         which python
                         pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                         pip install -r requirements.txt
-                        pytest testcases || true
+                        pytest testcases/test_search/test_search.py::TestSearch::test_search
                     '''
                 }
             }
@@ -32,25 +32,29 @@ pipeline {
 
         stage('Send Allure Report via Email') {
             steps {
-                withDockerContainer('namshi/smtp') {
+                withDockerContainer(['image': 'namshi/smtp', 'entryPoint': '']) {
                     sh '''
-                        echo "Subject: Jenkins Job - Allure Report-${env.BUILD_NUMBER}" > email.txt
-                        echo "To: he529564582@163.com" >> email.txt
-                        echo "From: he529564582@163.com" >> email.txt
-                        echo "MIME-Version: 1.0" >> email.txt
-                        echo "Content-Type: multipart/mixed; boundary=\\"boundary-text\\"" >> email.txt
-                        echo "" >> email.txt
-                        echo "--boundary-text" >> email.txt
-                        echo "Content-Type: text/plain" >> email.txt
-                        echo "" >> email.txt
-                        echo "Please find attached the Allure report for build ${env.BUILD_NUMBER}." >> email.txt
-                        echo "--boundary-text" >> email.txt
-                        echo "Content-Type: text/html; name=\\"index.html\\"" >> email.txt
-                        echo "Content-Disposition: attachment; filename=\\"index.html\\"" >> email.txt
-                        echo "" >> email.txt
-                        cat ./allure-report/index.html >> email.txt
-                        echo "--boundary-text--" >> email.txt
+                        # 创建邮件内容
+                        cat <<EOF > email.txt
+                        Subject: Jenkins Job - Allure Report-\${env.BUILD_NUMBER}
+                        To: he529564582@163.com
+                        From: he529564582@163.com
+                        MIME-Version: 1.0
+                        Content-Type: multipart/mixed; boundary="boundary-text"
 
+                        --boundary-text
+                        Content-Type: text/plain
+
+                        Please find attached the Allure report for build \${env.BUILD_NUMBER}.
+                        --boundary-text
+                        Content-Type: text/html; name="index.html"
+                        Content-Disposition: attachment; filename="index.html"
+
+                        $(cat ./allure-report/index.html)
+                        --boundary-text--
+                        EOF
+
+                        # 发送邮件
                         cat email.txt | sendmail -t
                     '''
                 }
