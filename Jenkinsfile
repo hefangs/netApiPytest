@@ -32,35 +32,30 @@ pipeline {
 
         stage('Send Allure Report via Email') {
             steps {
-                // 禁用默认的 ENTRYPOINT
-                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=""') { 
+                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
                     sh '''
-                        # 打印环境变量以确保 BUILD_NUMBER 存在
-                        echo "Environment variables:"
-                        env
-
                         # 创建邮件内容
-                        cat <<EOF > email.txt
-                        Subject: Jenkins Job - Allure Report-\${env.BUILD_NUMBER}
-                        To: he529564582@163.com
-                        From: he529564582@163.com
-                        MIME-Version: 1.0
-                        Content-Type: multipart/mixed; boundary="boundary-text"
+                        echo "Subject: Jenkins Job - Allure Report-${env.BUILD_NUMBER}" > email.txt
+                        echo "To: he529564582@163.com" >> email.txt
+                        echo "From: he529564582@163.com" >> email.txt
+                        echo "MIME-Version: 1.0" >> email.txt
+                        echo "Content-Type: multipart/mixed; boundary=\"boundary-text\"" >> email.txt
+                        echo "" >> email.txt
+                        echo "--boundary-text" >> email.txt
+                        echo "Content-Type: text/plain" >> email.txt
+                        echo "" >> email.txt
+                        echo "Please find attached the Allure report for build ${env.BUILD_NUMBER}." >> email.txt
+                        echo "" >> email.txt
+                        echo "--boundary-text" >> email.txt
+                        echo "Content-Type: text/html; name=\"index.html\"" >> email.txt
+                        echo "Content-Disposition: attachment; filename=\"index.html\"" >> email.txt
+                        echo "" >> email.txt
 
-                        --boundary-text
-                        Content-Type: text/plain
+                        # 将 index.html 文件内容追加到 email.txt
+                        cat ./allure-report/index.html >> email.txt
 
-                        Please find attached the Allure report for build \${env.BUILD_NUMBER}.
-                        --boundary-text
-                        Content-Type: text/html; name="index.html"
-                        Content-Disposition: attachment; filename="index.html"
-
-                        cat ./allure-report/index.html >> email.txt     
-                        --boundary-text--
-                        EOF
-
-                        # 检查生成的文件内容
-                        cat email.txt
+                        echo "" >> email.txt
+                        echo "--boundary-text--" >> email.txt
 
                         # 发送邮件
                         cat email.txt | exim -C -
