@@ -29,8 +29,8 @@ pipeline {
                 }
             }
         } 
-
-         stage('Send Allure Report via Email') {
+        
+        stage('Send Allure Report via Email') {
             steps {
                 // 禁用默认的 ENTRYPOINT
                 withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
@@ -51,9 +51,11 @@ pipeline {
                         Content-Type: text/html; name="index.html"
                         Content-Disposition: attachment; filename="index.html"
 
-                        cat ./allure-report/index.html >> email.txt
                         --boundary-text--
                         EOF
+
+                        # 将 index.html 文件内容追加到 email.txt
+                        cat ./allure-report/index.html >> email.txt
 
                         # 发送邮件
                         cat email.txt | exim -C -
