@@ -51,7 +51,7 @@ pipeline {
                         Content-Type: text/html; name="index.html"
                         Content-Disposition: attachment; filename="index.html"
 
-                        $(cat ./allure-report/index.html)
+                        cat ./allure-report/index.html >> email.txt
                         --boundary-text--
                         EOF
 
