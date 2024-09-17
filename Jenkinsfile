@@ -30,32 +30,32 @@ pipeline {
             }
         } 
 
-        // stage('Send Allure Report via Email') {
-        //     steps {
-        //         withDockerContainer('namshi/smtp') {
-        //             sh '''
-        //                 echo "Subject: Jenkins Job - Allure Report-${env.BUILD_NUMBER}" > email.txt
-        //                 echo "To: he529564582@163.com" >> email.txt
-        //                 echo "From: he529564582@163.com" >> email.txt
-        //                 echo "MIME-Version: 1.0" >> email.txt
-        //                 echo "Content-Type: multipart/mixed; boundary=\\"boundary-text\\"" >> email.txt
-        //                 echo "" >> email.txt
-        //                 echo "--boundary-text" >> email.txt
-        //                 echo "Content-Type: text/plain" >> email.txt
-        //                 echo "" >> email.txt
-        //                 echo "Please find attached the Allure report for build ${env.BUILD_NUMBER}." >> email.txt
-        //                 echo "--boundary-text" >> email.txt
-        //                 echo "Content-Type: text/html; name=\\"index.html\\"" >> email.txt
-        //                 echo "Content-Disposition: attachment; filename=\\"index.html\\"" >> email.txt
-        //                 echo "" >> email.txt
-        //                 cat ./allure-report/index.html >> email.txt
-        //                 echo "--boundary-text--" >> email.txt
+        stage('Send Allure Report via Email') {
+            steps {
+                withDockerContainer('namshi/smtp') {
+                    sh '''
+                        echo "Subject: Jenkins Job - Allure Report-${env.BUILD_NUMBER}" > email.txt
+                        echo "To: he529564582@163.com" >> email.txt
+                        echo "From: he529564582@163.com" >> email.txt
+                        echo "MIME-Version: 1.0" >> email.txt
+                        echo "Content-Type: multipart/mixed; boundary=\\"boundary-text\\"" >> email.txt
+                        echo "" >> email.txt
+                        echo "--boundary-text" >> email.txt
+                        echo "Content-Type: text/plain" >> email.txt
+                        echo "" >> email.txt
+                        echo "Please find attached the Allure report for build ${env.BUILD_NUMBER}." >> email.txt
+                        echo "--boundary-text" >> email.txt
+                        echo "Content-Type: text/html; name=\\"index.html\\"" >> email.txt
+                        echo "Content-Disposition: attachment; filename=\\"index.html\\"" >> email.txt
+                        echo "" >> email.txt
+                        cat ./allure-report/index.html >> email.txt
+                        echo "--boundary-text--" >> email.txt
 
-        //                 cat email.txt | sendmail -t
-        //             '''
-        //         }
-        //     }
-        // }
+                        cat email.txt | sendmail -t
+                    '''
+                }
+            }
+        }
 
     } 
 }
