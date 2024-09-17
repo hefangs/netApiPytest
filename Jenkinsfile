@@ -30,9 +30,10 @@ pipeline {
             }
         } 
 
-        stage('Send Allure Report via Email') {
+         stage('Send Allure Report via Email') {
             steps {
-                withDockerContainer(image: 'namshi/smtp', args: '') {
+                // 禁用默认的 ENTRYPOINT
+                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
                     sh '''
                         # 创建邮件内容
                         cat <<EOF > email.txt
@@ -55,7 +56,7 @@ pipeline {
                         EOF
 
                         # 发送邮件
-                        cat email.txt | sendmail -t
+                        cat email.txt | exim -C -
                     '''
                 }
             }
