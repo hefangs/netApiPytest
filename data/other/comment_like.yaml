@@ -5,8 +5,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 1873321491
-      cid: 5431158953
+      id: 1888354230
+      cid: 5937758466
       t: 1
       type: 0
   validate:
@@ -19,8 +19,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 1873321491
-      cid: 5431158953
+      id: 1888354230
+      cid: 5937758466
       t: 0
       type: 0
   validate:
@@ -33,8 +33,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 311004
-      cid: 28471026
+      id: 14364883
+      cid: 5431765020
       t: 1
       type: 1
   validate:
@@ -47,8 +47,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 311004
-      cid: 28471026
+      id: 14364883
+      cid: 5431765020
       t: 0
       type: 1
   validate:
@@ -61,8 +61,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 893126993
-      cid: 541513131
+      id: 2829883282
+      cid: 2037513089
       t: 1
       type: 2
   validate:
@@ -75,8 +75,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 893126993
-      cid: 541513131
+      id: 2829883282
+      cid: 2037513089
       t: 0
       type: 2
   validate:
@@ -89,8 +89,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 3017104
-      cid: 11346240
+      id: 75116936
+      cid: 1353601632
       t: 1
       type: 3
   validate:
@@ -103,8 +103,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 3017104
-      cid: 11346240
+      id: 75116936
+      cid: 1353601632
       t: 0
       type: 3
   validate:
@@ -117,8 +117,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 2538375026
-      cid: 6069600181
+      id: 2517403312
+      cid: 5853259287
       t: 1
       type: 4
   validate:
@@ -131,8 +131,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 2538375026
-      cid: 6069600181
+      id: 2517403312
+      cid: 5853259287
       t: 0
       type: 4
   validate:
@@ -145,8 +145,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 89ADDE33C0AAE8EC14B99F6750DB954D
-      cid: 3569758358
+      id: 0C2DB8DA23525952D0E86AE3DF6F5429
+      cid: 3546809384
       t: 1
       type: 5
   validate:
@@ -159,8 +159,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      id: 89ADDE33C0AAE8EC14B99F6750DB954D
-      cid: 3569758358
+      id: 0C2DB8DA23525952D0E86AE3DF6F5429
+      cid: 3546809384
       t: 0
       type: 5
   validate:
@@ -173,8 +173,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      cid: 5437158321
-      threadId: A_EV_2_19714618747_560803159
+      threadId: A_EV_2_30075905908_358047007
+      cid: 30075905908
       t: 1
       type: 6
   validate:
@@ -187,8 +187,8 @@
     method: get
     url: http://106.15.79.229:3000/comment/like
     params:
-      cid: 5437158321
-      threadId: A_EV_2_19714618747_560803159
+      threadId: A_EV_2_30075905908_358047007
+      cid: 30075905908
       t: 0
       type: 6
   validate:
