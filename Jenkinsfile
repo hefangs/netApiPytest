@@ -29,12 +29,16 @@ pipeline {
                 }
             }
         } 
-        
+
         stage('Send Allure Report via Email') {
             steps {
                 // 禁用默认的 ENTRYPOINT
-                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
+                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=""') { 
                     sh '''
+                        # 打印环境变量以确保 BUILD_NUMBER 存在
+                        echo "Environment variables:"
+                        env
+
                         # 创建邮件内容
                         cat <<EOF > email.txt
                         Subject: Jenkins Job - Allure Report-\${env.BUILD_NUMBER}
@@ -51,11 +55,12 @@ pipeline {
                         Content-Type: text/html; name="index.html"
                         Content-Disposition: attachment; filename="index.html"
 
+                        cat ./allure-report/index.html >> email.txt     
                         --boundary-text--
                         EOF
 
-                        # 将 index.html 文件内容追加到 email.txt
-                        cat ./allure-report/index.html >> email.txt
+                        # 检查生成的文件内容
+                        cat email.txt
 
                         # 发送邮件
                         cat email.txt | exim -C -
