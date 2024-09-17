@@ -32,7 +32,7 @@ pipeline {
 
         stage('Send Allure Report via Email') {
             steps {
-                withDockerContainer(['image': 'namshi/smtp', 'entryPoint': '']) {
+                withDockerContainer(image: 'namshi/smtp', args: '') {
                     sh '''
                         # 创建邮件内容
                         cat <<EOF > email.txt
