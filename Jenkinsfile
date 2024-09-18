@@ -50,7 +50,7 @@ pipeline {
                                 tar -czf allure-report.tar.gz ./allure-report
 
                                 # 安装 mutt、SSL证书和 SASL库
-                                apk add --no-cache mutt bash ca-certificates cyrus-sasl
+                                apk add --no-cache mutt bash ca-certificates cyrus-sasl cyrus-sasl-plain
                                 update-ca-certificates
 
                                 # URL 编码用户名和密码
@@ -59,9 +59,9 @@ pipeline {
 
                                 # 配置 mutt
                                 echo "set smtp_url=\"smtps://$USERNAME_ENCODED:$PASSWORD_ENCODED@smtp.163.com:465/\"" > ~/.muttrc
-                                echo "set smtp_pass=\"$SMTP_PASS\"" >> ~/.muttrc
                                 echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
+                                echo "set debug_level=2" >> ~/.muttrc
 
                                 # 发送带附件的邮件
                                 echo "Sending email with attachment..."
