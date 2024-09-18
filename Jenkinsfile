@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('pytest testcases') {   
+        stage('Pytest Testcases') {   
             steps {
                 withDockerContainer('python') {
                     sh 'python -V'
