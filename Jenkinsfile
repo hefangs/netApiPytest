@@ -54,7 +54,7 @@ pipeline {
                                 update-ca-certificates
 
                                 # 配置 mutt
-                                echo "set smtp_url=\"smtps://$SMTP_USER:smtp.163.com:465/\"" > ~/.muttrc
+                                echo "set smtp_url=\"smtps://$SMTP_USER:$SMTP_PASS@smtp.163.com:465/\"" > ~/.muttrc
                                 echo "set smtp_pass=\"$SMTP_PASS\"" >> ~/.muttrc
                                 echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
