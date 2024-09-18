@@ -30,12 +30,12 @@ pipeline {
             }
         } 
 
-        stage('Send Allure Report via Email') {
+       stage('Send Allure Report via Email') {
             steps {
                 withDockerContainer('alpine:3.12') {
                     script {
-                        withCredentials([usernamePassword(credentialsId: '2c6be544-a0eb-493e-89a4-6fe5443c1eae', 
-                                                        usernameVariable: 'SMTP_USER', 
+                        withCredentials([usernamePassword(credentialsId: '2c6be544-a0eb-493e-89a4-6fe5443c1eae',
+                                                        usernameVariable: 'SMTP_USER',
                                                         passwordVariable: 'SMTP_PASS')]) {
                             sh '''
                                 # 使用清华大学的镜像源
@@ -56,8 +56,11 @@ pipeline {
                                 # 配置 mutt
                                 echo "set smtp_url=\"smtps://$SMTP_USER@smtp.163.com:465/\"" > ~/.muttrc
                                 echo "set smtp_pass=\"$SMTP_PASS\"" >> ~/.muttrc
-                                echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
+                                echo "set smtp_authenticators=\"plain\"" >> ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
+
+                                # 启用调试模式
+                                echo "set debug_level=3" >> ~/.muttrc
 
                                 # 发送带附件的邮件
                                 echo "Sending email with attachment..."
