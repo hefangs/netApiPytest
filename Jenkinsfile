@@ -32,25 +32,15 @@ pipeline {
 
         stage('Send Allure Report via Email') {
             steps {
-                withCredentials([usernamePassword(credentialsId: '814aa18c-a7e2-4b58-a7c4-43bf63423be8', usernameVariable: 'SMTP_USERNAME', passwordVariable: 'SMTP_PASSWORD')]) {
-                    withDockerContainer('mailhog/mailhog') {
-                        withEnv([
-                            "SMTP_HOST=smtp.163.com",
-                            "SMTP_PORT=465",
-                            "FROM_ADDRESS=he529564582@163.com",
-                            "TO_ADDRESS=he529564582@163.com",
-                            "SUBJECT=Allure Report"
-                        ]) {
-                            sh '''
-                                # 压缩Allure报告
-                                tar -czf allure-report.tar.gz -C ./allure-report .
-                                # 发送邮件
-                                mhsendmail -subject="${SUBJECT}" -from="${FROM_ADDRESS}" -to="${TO_ADDRESS}" -auth-plain="${SMTP_USERNAME}:${SMTP_PASSWORD}" -host="${SMTP_HOST}" -port="${SMTP_PORT}" -starttls=false -insecure-skip-verify=true -attach="allure-report.tar.gz" <<EOF
-                                Please find attached the Allure report.
-                                EOF
-                            '''
-                        }
-                    }
+                withDockerContainer('namshi/smtp') {
+                    sh '''
+                        echo "Subject: Allure Report" > email.txt
+                        echo "Please find the Allure report attached." >> email.txt
+                        echo "" >> email.txt
+                        zip -r allure-report.zip ./allure-report
+                        cat email.txt | ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com
+                        ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com < email.txt -A allure-report.zip
+                    '''
                 }
             }
         }
