@@ -38,6 +38,10 @@ pipeline {
                                                         usernameVariable: 'SMTP_USER', 
                                                         passwordVariable: 'SMTP_PASS')]) {
                             sh '''
+                                # 使用清华大学的镜像源
+                                echo "http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.12/main" > /etc/apk/repositories
+                                echo "http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.12/community" >> /etc/apk/repositories
+
                                 # 创建邮件正文
                                 echo "Subject: Allure Report" > email.txt
                                 echo "Please find the attached Allure report." >> email.txt
