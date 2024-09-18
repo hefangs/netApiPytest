@@ -32,19 +32,19 @@ pipeline {
 
        stage('Send Allure Report via Email') {
             steps {
-                script {
-                    // 使用 docker-mailserver 镜像
-                    withDockerContainer('mailserver/docker-mailserver:latest') {
-                        withCredentials([usernamePassword(credentialsId: '2c6be544-a0eb-493e-89a4-6fe5443c1eae',
-                                                            usernameVariable: 'SMTP_USER',
-                                                            passwordVariable: 'SMTP_PASS')]) {
-                            sh '''
-                                # 发送邮件
-                                echo "Subject: Allure Report\nPlease find the attached Allure report." | \
-                                mailx -s "Allure Report" -a allure-report.tar.gz -r "$SMTP_USER" -S smtp="smtp://smtp.163.com:587" -S smtp-auth=login -S smtp-auth-user="$SMTP_USER" -S smtp-auth-password="$SMTP_PASS" he529564582@163.com
-                            '''
-                        }   
-                    }
+                // 将 allure-report 目录压缩为 tar 文件
+                sh 'tar -cvf allure-report.tar ./allure-report'
+                
+                // 使用 jess/mutt 发送邮件
+                withDockerContainer('jess/mutt') {
+                    // 创建 .muttrc 配置文件
+                    sh '''
+                        echo 'set smtp_url = "smtp://he529564582@163.com:hf15000840699@smtp.163.com:587/"' > /root/.muttrc
+                        echo "请查收附件中的 Allure 测试报告，构建编号 #${env.BUILD_NUMBER}。" | mutt \
+                        -s "Allure 测试报告 - 构建 #${env.BUILD_NUMBER}" \
+                        -a allure-report.tar \
+                        -- he529564582@163.com
+                    '''
                 }
             }
         }
