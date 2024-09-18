@@ -32,40 +32,16 @@ pipeline {
 
        stage('Send Allure Report via Email') {
             steps {
-                withDockerContainer('alpine:3.12') {
-                    script {
+                script {
+                    // 使用 docker-mailserver 镜像
+                    withDockerContainer('docker-mailserver/mailserver:latest') {
                         withCredentials([usernamePassword(credentialsId: '2c6be544-a0eb-493e-89a4-6fe5443c1eae',
-                                                        usernameVariable: 'SMTP_USER',
-                                                        passwordVariable: 'SMTP_PASS')]) {
+                                                            usernameVariable: 'SMTP_USER',
+                                                            passwordVariable: 'SMTP_PASS')]) {
                             sh '''
-                                # 使用清华大学的镜像源
-                                echo "http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.12/main" > /etc/apk/repositories
-                                echo "http://mirrors.tuna.tsinghua.edu.cn/alpine/v3.12/community" >> /etc/apk/repositories
-
-                                # 创建邮件正文
-                                echo "Subject: Allure Report" > email.txt
-                                echo "Please find the attached Allure report." >> email.txt
-
-                                # 打包报告
-                                tar -czf allure-report.tar.gz ./allure-report
-
-                                # 安装 mutt、SSL证书和 SASL库
-                                apk add --no-cache mutt bash ca-certificates cyrus-sasl cyrus-sasl-plain
-                                update-ca-certificates
-
-                                # URL 编码用户名和密码
-                                USERNAME_ENCODED=$(echo "$SMTP_USER" | sed 's/@/%40/g')
-                                PASSWORD_ENCODED=$(echo "$SMTP_PASS" | sed 's/@/%40/g')
-
-                                # 配置 mutt
-                                echo "set smtp_url=\"smtps://$USERNAME_ENCODED:$PASSWORD_ENCODED@smtp.163.com:465/\"" > ~/.muttrc
-                                echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
-                                echo "set ssl_force_tls=yes" >> ~/.muttrc
-                                echo "set debug_level=2" >> ~/.muttrc
-
-                                # 发送带附件的邮件
-                                echo "Sending email with attachment..."
-                                mutt -s "Allure Report" -a allure-report.tar.gz -- he529564582@163.com < email.txt
+                                # 发送邮件
+                                echo "Subject: Allure Report\nPlease find the attached Allure report." | \
+                                mailx -s "Allure Report" -a allure-report.tar.gz -r "$SMTP_USER" -S smtp="smtp://smtp.163.com:587" -S smtp-auth=login -S smtp-auth-user="$SMTP_USER" -S smtp-auth-password="$SMTP_PASS" he529564582@163.com
                             '''
                         }
                     }
