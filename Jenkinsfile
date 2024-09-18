@@ -53,8 +53,12 @@ pipeline {
                                 apk add --no-cache mutt bash ca-certificates cyrus-sasl
                                 update-ca-certificates
 
+                                # URL 编码用户名和密码
+                                USERNAME_ENCODED=$(echo "$SMTP_USER" | sed 's/@/%40/g')
+                                PASSWORD_ENCODED=$(echo "$SMTP_PASS" | sed 's/@/%40/g')
+
                                 # 配置 mutt
-                                echo "set smtp_url=\"smtps://$SMTP_USER:$SMTP_PASS@smtp.163.com:465/\"" > ~/.muttrc
+                                echo "set smtp_url=\"smtps://$USERNAME_ENCODED:$PASSWORD_ENCODED@smtp.163.com:465/\"" > ~/.muttrc
                                 echo "set smtp_pass=\"$SMTP_PASS\"" >> ~/.muttrc
                                 echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
