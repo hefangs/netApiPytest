@@ -53,7 +53,7 @@ pipeline {
                                 apk add --no-cache mutt bash
 
                                 # 配置 mutt
-                                echo "set smtp_url=\"smtp://$SMTP_USER:$SMTP_PASS@smtp.163.com:465/\"" > ~/.muttrc
+                                echo "set smtp_url=\"smtps://$SMTP_USER:$SMTP_PASS@smtp.163.com:465/\"" > ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
 
                                 # 发送带附件的邮件
