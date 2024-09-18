@@ -37,9 +37,9 @@ pipeline {
                         echo "Subject: Allure Report" > email.txt
                         echo "Please find the Allure report attached." >> email.txt
                         echo "" >> email.txt
-                        zip -r allure-report.zip ./allure-report
+                        tar -czf allure-report.tar.gz ./allure-report
                         cat email.txt | ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com
-                        ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com < email.txt -A allure-report.zip
+                        ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com < email.txt -A allure-report.tar.gz
                     '''
                 }
             }
