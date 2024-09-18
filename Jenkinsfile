@@ -33,7 +33,7 @@ pipeline {
         stage('Send Allure Report via Email') {
             steps {
                 withCredentials([usernamePassword(credentialsId: '814aa18c-a7e2-4b58-a7c4-43bf63423be8', usernameVariable: 'SMTP_USERNAME', passwordVariable: 'SMTP_PASSWORD')]) {
-                    withDockerContainer('mailhog/mhsendmail') {
+                    withDockerContainer('mailhog/mailhog') {
                         withEnv([
                             "SMTP_HOST=smtp.163.com",
                             "SMTP_PORT=465",
