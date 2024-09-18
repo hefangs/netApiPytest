@@ -30,38 +30,14 @@ pipeline {
             }
         } 
 
-        stage('Send Allure Report via Email') {
-            steps {
-                withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
-                    sh '''
-                        # 创建邮件内容
-                        echo "Subject: Jenkins Job - Allure Report-${BUILD_NUMBER}" > email.txt
-                        echo "To: he529564582@163.com" >> email.txt
-                        echo "From: he529564582@163.com" >> email.txt
-                        echo "MIME-Version: 1.0" >> email.txt
-                        echo "Content-Type: multipart/mixed; boundary=\"boundary-text\"" >> email.txt
-                        echo "" >> email.txt
-                        echo "--boundary-text" >> email.txt
-                        echo "Content-Type: text/plain" >> email.txt
-                        echo "" >> email.txt
-                        echo "Please find attached the Allure report for build ${BUILD_NUMBER}." >> email.txt
-                        echo "" >> email.txt
-                        echo "--boundary-text" >> email.txt
-                        echo "Content-Type: text/html; name=\"index.html\"" >> email.txt
-                        echo "Content-Disposition: attachment; filename=\"index.html\"" >> email.txt
-                        echo "" >> email.txt
-
-                        # 将 index.html 文件内容追加到 email.txt
-                        cat ./allure-report/index.html >> email.txt
-
-                        echo "" >> email.txt
-                        echo "--boundary-text--" >> email.txt
-
-                        # 发送邮件
-                        cat email.txt | exim -C -
-                    '''
-                }
-            }
-        }
+        // stage('Send Allure Report via Email') {
+        //     steps {
+        //         withDockerContainer(image: 'namshi/smtp', args: '--entrypoint=\'\'') { 
+        //             sh '''
+                        
+        //             '''
+        //         }
+        //     }
+        // }
     }
 }
