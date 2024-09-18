@@ -54,13 +54,10 @@ pipeline {
                                 update-ca-certificates
 
                                 # 配置 mutt
-                                echo "set smtp_url=\"smtps://$SMTP_USER@smtp.163.com:465/\"" > ~/.muttrc
+                                echo "set smtp_url=\"smtps://$SMTP_USER:smtp.163.com:465/\"" > ~/.muttrc
                                 echo "set smtp_pass=\"$SMTP_PASS\"" >> ~/.muttrc
-                                echo "set smtp_authenticators=\"plain\"" >> ~/.muttrc
+                                echo "set smtp_authenticators=\"login\"" >> ~/.muttrc
                                 echo "set ssl_force_tls=yes" >> ~/.muttrc
-
-                                # 启用调试模式
-                                echo "set debug_level=3" >> ~/.muttrc
 
                                 # 发送带附件的邮件
                                 echo "Sending email with attachment..."
