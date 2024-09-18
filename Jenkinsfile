@@ -30,21 +30,36 @@ pipeline {
             }
         } 
 
-        // stage('Send Allure Report via Email') {
-        //     steps {
-        //         withDockerContainer('openjdk:8-jdk-alpine') {
-        //             sh '''
-        //                 echo "Subject: Allure Report" > email.txt
-        //                 echo "Please find the Allure report attached." >> email.txt
-        //                 echo "" >> email.txt
-        //                 tar -czf allure-report.tar.gz ./allure-report
-        //                 apk add --no-cache bash
-        //                 apk add --no-cache ssmtp
-        //                 cat email.txt | ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com
-        //                 ssmtp -v he529564582@163.com -s smtp.163.com -p 465 -U your-email@163.com -P hf15000840699 -f your-email@163.com < email.txt -A allure-report.tar.gz
-        //             '''
-        //         }
-        //     }
-        // }
+        stage('Send Allure Report via Email') {
+            steps {
+                withDockerContainer('alpine:3.12') {
+                    script {
+                        withCredentials([usernamePassword(credentialsId: '2c6be544-a0eb-493e-89a4-6fe5443c1eae', 
+                                                        usernameVariable: 'SMTP_USER', 
+                                                        passwordVariable: 'SMTP_PASS')]) {
+                            sh '''
+                                # 创建邮件正文
+                                echo "Subject: Allure Report" > email.txt
+                                echo "Please find the attached Allure report." >> email.txt
+
+                                # 打包报告
+                                tar -czf allure-report.tar.gz ./allure-report
+
+                                # 安装 mutt
+                                apk add --no-cache mutt bash
+
+                                # 配置 mutt
+                                echo "set smtp_url=\"smtp://$SMTP_USER:$SMTP_PASS@smtp.163.com:465/\"" > ~/.muttrc
+                                echo "set ssl_force_tls=yes" >> ~/.muttrc
+
+                                # 发送带附件的邮件
+                                echo "Sending email with attachment..."
+                                mutt -s "Allure Report" -a allure-report.tar.gz -- recipient-email@domain.com < email.txt
+                            '''
+                        }
+                    }
+                }
+            }
+        }
     }
 }
