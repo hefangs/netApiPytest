@@ -65,7 +65,6 @@ pipeline {
                                             </ul>    
                                             <h4><font color="#0B610B">失败用例</font></h4>
                                             <hr size="2" width="100%" />
-                                            $FAILED_TESTS<br/>
                                             <h4><font color="#0B610B">最近提交(#${GIT_REVISION})</font></h4>
                                             <hr size="2" width="100%" />
                                             详细提交: <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a><br/>
