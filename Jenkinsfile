@@ -62,7 +62,6 @@ pipeline {
                                                 <li>构建状态： ${env.JOB_STATUS}</li>    
                                                 <li>构建日志： <a href="${BUILD_URL}console">${BUILD_URL}console</a></li>    
                                                 <li>构建URL： <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
-                                                <li>测试报告： <a href="${PROJECT_URL}HTML_20Report">${PROJECT_URL}HTML_20Report</a></li>    
                                             </ul>    
                                             <h4><font color="#0B610B">失败用例</font></h4>
                                             <hr size="2" width="100%" />
