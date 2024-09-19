@@ -68,15 +68,11 @@ pipeline {
                                                 <li>测试报告: <a href="${env.JOB_URL}allure-report">${env.JOB_URL}allure-report</a></li>    
                                             </ul>    
 
-                                <h4><font color="#0B610B">失败用例</font></h4>
-                                <hr size="2" width="100%" />
-                                ${FAILED_TESTS}<br/>
+                                
 
-                                <h4><font color="#0B610B">最近提交(#${env.GIT_REVISION})</font></h4>
+                                <h4><font color="#0B610B">最近提交: ${env.GIT_REVISION}</font></h4>
                                 <hr size="2" width="100%" />
-                                <ul>
-                                ${CHANGES_SINCE_LAST_SUCCESS, reverse=true, format="%c", changesFormat="<li>%d [%a] %m</li>"}
-                                </ul>
+                              
                                 详细提交: <a href="${env.JOB_URL}changes">${env.JOB_URL}changes</a><br/>
 
                                         </td>    
