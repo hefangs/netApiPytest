@@ -32,17 +32,16 @@ pipeline {
     }
     post {
         success {
-            echo 'Build succeeded! Sending success email...'
-            // 发送成功邮件
-            withDockerContainer('jess/mutt') {
-                sh '''
-                    tar -cvf allure-report.tar ./allure-report
-                    echo "构建成功！请查收附件中的 Allure 测试报告，构建编号 #${env.BUILD_NUMBER}。" | mutt \
-                    -s "Allure 测试报告 - 构建 #${env.BUILD_NUMBER} 成功" \
-                    -a allure-report.tar \
-                    -- he529564582@163.com
-                '''
-            }
+            // 构建成功时执行
+            mail to: 'he529564582@163.com',
+                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "查看控制台输出: ${env.BUILD_URL}"
+        }
+        failure {
+            // 构建失败时执行
+            mail to: 'he529564582@163.com',
+                 subject: "构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: "查看控制台输出: ${env.BUILD_URL}"
         }
     }
 }
