@@ -41,7 +41,7 @@ pipeline {
                         <html>    
                         <head>    
                         <meta charset="UTF-8">    
-                        <title>${ENV, var="JOB_NAME"}-第${BUILD_NUMBER}次构建日志</title>    
+                        <title>${env.JOB_NAME}-第${BUILD_NUMBER}次构建日志</title>    
                         </head>    
                             
                         <body leftmargin="8" marginwidth="0" topmargin="8" marginheight="4"    
@@ -60,13 +60,13 @@ pipeline {
                                 <tr>    
                                     <td>    
                                         <ul>    
-                                            <li>项目名称 ： ${PROJECT_NAME}</li>    
-                                            <li>构建编号 ： 第${BUILD_NUMBER}次构建</li>    
-                                            <li>触发原因： ${CAUSE}</li>    
-                                            <li>构建状态： ${BUILD_STATUS}</li>    
-                                            <li>构建日志： <a href="${BUILD_URL}console">${BUILD_URL}console</a></li>    
-                                            <li>构建URL： <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
-                                            <li>测试报告： <a href="${PROJECT_URL}HTML_20Report">${PROJECT_URL}HTML_20Report</a></li>    
+                                            <li>项目名称：${PROJECT_NAME}</li>    
+                                            <li>构建编号：第${BUILD_NUMBER}次构建</li>    
+                                            <li>触发原因：${CAUSE}</li>    
+                                            <li>构建状态：${BUILD_STATUS}</li>    
+                                            <li>构建日志：<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>    
+                                            <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
+                                            <li>测试报告：<a href="${PROJECT_URL}HTML_20Report">${PROJECT_URL}HTML_20Report</a></li>    
                                         </ul>    
 
                         <h4><font color="#0B610B">失败用例</font></h4>
