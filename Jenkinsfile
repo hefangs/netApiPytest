@@ -44,20 +44,5 @@ pipeline {
                 '''
             }
         }
-        failure {
-            echo 'Build failed! Sending failure email...'
-            // 发送失败邮件
-            withDockerContainer('jess/mutt') {
-                sh '''
-                    echo "构建失败，请尽快查看构建日志，构建编号 #${env.BUILD_NUMBER}。" | mutt \
-                    -s "Allure 测试报告 - 构建 #${env.BUILD_NUMBER} 失败" \
-                    -- he529564582@163.com
-                '''
-            }
-        }
-        always {
-            echo 'Build completed. Cleaning up...'
-            // 无论构建是否成功，都会执行
-        }
     }
 }
