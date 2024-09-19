@@ -34,15 +34,13 @@ pipeline {
         success {
             // 构建成功时执行
             mail to: 'he529564582@163.com',
-                 subject: "${env.JOB_NAME}-第${env.BUILD_NUMBER}构建成功",
-                 body: 
-                    """
-                        项目名称: ${env.JOB_NAME}
-                        构建状态: 成功
-                        构建编号: 第${env.BUILD_NUMBER}次构建
-                        构建URL: ${env.BUILD_URL}
-                        最近提交: ${GIT_REVISION}
-                    """
+                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                 body: """
+                        项目名称 ： ${env.JOB_NAME}
+                        构建编号 ： 第${env.BUILD_NUMBER}次构建
+                        构建状态： 成功
+                        构建URL： ${env.BUILD_URL}
+                        """
         }
     }
 }
