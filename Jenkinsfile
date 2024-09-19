@@ -64,7 +64,7 @@ pipeline {
                                                 <li>Git提交ID: ${env.GIT_COMMIT}  
                                                 <li>Git提交ID: ${env.GIT_BRANCH}
                                                 <li>Git提交ID: ${env.BUILD_TAG}
-                                                <li>Git提交ID: ${buildResult}
+                                                <li>Git提交ID: ${currentBuild.result}
                                             </ul>    
                                         </td>    
                                     </tr>    
