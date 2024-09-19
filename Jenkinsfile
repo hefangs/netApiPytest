@@ -63,8 +63,6 @@ pipeline {
                                                 <li>构建日志: <a href="${BUILD_URL}console">${BUILD_URL}console</a></li>    
                                                 <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
                                             </ul>    
-                                            <h4><font color="#0B610B">失败用例</font></h4>
-                                            <hr size="2" width="100%" />
                                             <hr size="2" width="100%" />
                                             详细提交: <a href="${BUILD_URL}changes">${BUILD_URL}changes</a><br/>
                                         </td>    
