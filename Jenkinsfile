@@ -64,22 +64,19 @@ pipeline {
                     <li>构建URL： <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
                     <li>测试报告： <a href="${PROJECT_URL}HTML_20Report">${PROJECT_URL}HTML_20Report</a></li>    
                 </ul>    
+                <h4><font color="#0B610B">失败用例</font></h4>
+                <hr size="2" width="100%" />
+                $FAILED_TESTS<br/>
+                <h4><font color="#0B610B">最近提交(#${GIT_REVISION})</font></h4>
+                <hr size="2" width="100%" />
+                详细提交: <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a><br/>
 
-<h4><font color="#0B610B">失败用例</font></h4>
-<hr size="2" width="100%" />
-$FAILED_TESTS<br/>
-
-<h4><font color="#0B610B">最近提交(#${GIT_REVISION})</font></h4>
-<hr size="2" width="100%" />
-
-详细提交: <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a><br/>
-
-            </td>    
-        </tr>    
-    </table>  
-                        </body>
-                        </html>
-                        """,
+                            </td>    
+                        </tr>    
+                    </table>  
+                                        </body>
+                                        </html>
+                                        """,
                  mimeType: 'text/html'
         }
     }
