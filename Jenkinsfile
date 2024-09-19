@@ -30,23 +30,23 @@ pipeline {
             }
         } 
 
-       stage('Send Allure Report via Email') {
-            steps {
-                // 将 allure-report 目录压缩为 tar 文件
-                sh 'tar -cvf allure-report.tar ./allure-report'
+    //    stage('Send Allure Report via Email') {
+    //         steps {
+    //             // 将 allure-report 目录压缩为 tar 文件
+    //             sh 'tar -cvf allure-report.tar ./allure-report'
                 
-                // 使用 jess/mutt 发送邮件
-                withDockerContainer('jess/mutt') {
-                    // 创建 .muttrc 配置文件
-                    sh '''
-                        echo 'set smtp_url = "smtp://he529564582@163.com:hf15000840699@smtp.163.com:587/"' > /root/.muttrc
-                        echo "请查收附件中的 Allure 测试报告，构建编号 #${env.BUILD_NUMBER}。" | mutt \
-                        -s "Allure 测试报告 - 构建 #${env.BUILD_NUMBER}" \
-                        -a allure-report.tar \
-                        -- he529564582@163.com
-                    '''
-                }
-            }
-        }
+    //             // 使用 jess/mutt 发送邮件
+    //             withDockerContainer('jess/mutt') {
+    //                 // 创建 .muttrc 配置文件
+    //                 sh '''
+    //                     echo 'set smtp_url = "smtp://he529564582@163.com:hf15000840699@smtp.163.com:587/"' > /root/.muttrc
+    //                     echo "请查收附件中的 Allure 测试报告，构建编号 #${env.BUILD_NUMBER}。" | mutt \
+    //                     -s "Allure 测试报告 - 构建 #${env.BUILD_NUMBER}" \
+    //                     -a allure-report.tar \
+    //                     -- he529564582@163.com
+    //                 '''
+    //             }
+    //         }
+    //     }
     }
 }
