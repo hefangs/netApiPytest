@@ -47,7 +47,7 @@ pipeline {
                                     <tr>    
                                         本邮件由系统自动发出，无需回复！<br/>            
                                         大家好，以下为 ${env.JOB_NAME } 项目构建信息</br> 
-                                        <td><font color="#CC0000">构建结果 - ${currentBuild.result}</font></td>   
+                                        <td><font color="#CC0000">构建结果 - ${currentBuild}</font></td>   
                                     </tr>    
                                     <tr>    
                                         <td><br />    
