@@ -61,7 +61,6 @@ pipeline {
                                                 <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>
                                                 <li>构建日志： <a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                                                 <li>最近提交: <a href="${BUILD_URL}changes">${BUILD_URL}changes</a</li>  
-                                                <li>最近提交: ${PROJECT_URL}
                                             </ul>    
                                         </td>    
                                     </tr>    
