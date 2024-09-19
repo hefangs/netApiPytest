@@ -15,7 +15,7 @@ pipeline {
                         which python
                         pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                         pip install -r requirements.txt
-                        pytest testcases/test_search/test_search.py::TestSearch::test_search
+                        pytest -n 2 testcases
                     '''
                 }
             }
