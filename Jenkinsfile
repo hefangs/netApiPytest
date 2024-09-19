@@ -25,15 +25,18 @@ pipeline {
             steps {
                 withDockerContainer('frankescobar/allure-docker-service') {
                     sh 'allure --version'
-                    // sh 'allure generate ./temp -o ./allure-report --clean'
+                    sh 'allure generate ./temp -o ./allure-report --clean'
                 }
             }
         } 
     }
     post {
+        allure([
+                includeProperties: false,
+                jdk: '',
+                results: [[path: './temp']]
+            ])
         success{
-             // 发布Allure报告到Jenkins的构建页面
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-report']]
             mail to: 'he529564582@163.com',
                  subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                  body: """
