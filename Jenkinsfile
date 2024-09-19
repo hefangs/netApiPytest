@@ -38,7 +38,6 @@ pipeline {
                  body: """
                         项目名称 ： ${env.JOB_NAME}
                         构建编号 ： 第${env.BUILD_NUMBER}次构建
-                        触发原因： ${CAUSE}
                         构建状态： 成功
                         构建日志： ${env.BUILD_URL}console
                         构建URL： ${env.BUILD_URL}
@@ -51,7 +50,6 @@ pipeline {
                  body: """
                         项目名称 ： ${env.JOB_NAME}
                         构建编号 ： 第${env.BUILD_NUMBER}次构建
-                        触发原因： ${CAUSE}
                         构建状态： 失败
                         构建日志： ${env.BUILD_URL}
                         构建URL： ${env.BUILD_URL}
