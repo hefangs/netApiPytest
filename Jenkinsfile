@@ -31,7 +31,7 @@ pipeline {
         } 
     }
     post {
-        success {
+        always {
             // 构建成功时执行
             mail to: 'he529564582@163.com',
                  subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
