@@ -60,7 +60,11 @@ pipeline {
                                                 <li>项目名称: ${env.JOB_NAME}</li>    
                                                 <li>构建编号: 第 ${BUILD_NUMBER} 次构建</li>            
                                                 <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>
-                                                <li>提交信息: <a href="${BUILD_URL}changes">${BUILD_URL}changes</a</li>  
+                                                <li>提交信息: <a href="${BUILD_URL}"changes">${BUILD_URL}changes</a</li>  
+                                                <li>Git提交ID: ${env.GIT_COMMIT}  
+                                                <li>Git提交ID: ${env.GIT_BRANCH}
+                                                <li>Git提交ID: ${env.BUILD_TAG}
+                                                <li>Git提交ID: ${buildResult}
                                             </ul>    
                                         </td>    
                                     </tr>    
