@@ -60,7 +60,7 @@ pipeline {
                                                 <li>项目名称: ${env.JOB_NAME}</li>    
                                                 <li>构建编号: 第 ${BUILD_NUMBER} 次构建</li>            
                                                 <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>
-                                                <li>最近提交: <a href="${BUILD_URL}"changes">${BUILD_URL}changes</a</li>  
+                                                <li>最近提交: <a href="${BUILD_URL}changes">${BUILD_URL}changes</a</li>  
                                             </ul>    
                                         </td>    
                                     </tr>    
