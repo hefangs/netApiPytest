@@ -76,7 +76,7 @@ pipeline {
                         <h4><font color="#0B610B">最近提交(#${GIT_REVISION})</font></h4>
                         <hr size="2" width="100%" />
                         <ul>
-                        ${CHANGES_SINCE_LAST_SUCCESS, reverse=true, format="%c", changesFormat="<li>%d [%a] %m</li>"}
+                        // ${CHANGES_SINCE_LAST_SUCCESS, reverse=true, format="%c", changesFormat="<li>%d [%a] %m</li>"}
                         </ul>
                         详细提交: <a href="${PROJECT_URL}changes">${PROJECT_URL}changes</a><br/>
 
