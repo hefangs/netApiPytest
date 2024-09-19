@@ -59,7 +59,7 @@ pipeline {
                                             <ul>    
                                                 <li>项目名称 ： ${env.JOB_NAME}</li>    
                                                 <li>构建编号 ： 第${BUILD_NUMBER}次构建</li>    
-                                                <li>构建状态： ${BUILD_STATUS}</li>    
+                                                <li>构建状态： ${env.JOB_STATUS}</li>    
                                                 <li>构建日志： <a href="${BUILD_URL}console">${BUILD_URL}console</a></li>    
                                                 <li>构建URL： <a href="${BUILD_URL}">${BUILD_URL}</a></li>    
                                                 <li>测试报告： <a href="${PROJECT_URL}HTML_20Report">${PROJECT_URL}HTML_20Report</a></li>    
