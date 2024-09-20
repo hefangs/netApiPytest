@@ -15,7 +15,7 @@ pipeline {
                         which python
                         pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                         pip install -r requirements.txt
-                        pytest -n 4 testcases || true
+                        pytest -n 4 testcases
                     '''
                 }
             }
@@ -31,14 +31,17 @@ pipeline {
         // } 
     }
     post {
-        unstable {
+         always {
             script {
-                currentBuild.result = 'SUCCESS'
+                if (currentBuild.result == 'UNSTABLE') {
+                    mail to: 'he529564582@163.com',
+                        subject: "构建不稳定: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                        body: "构建完成，但有失败的测试用例。请检查报告。"
+                }
             }
         }
 
         success{
-             // 发布Allure报告到Jenkins的构建页面
             allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                  subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
