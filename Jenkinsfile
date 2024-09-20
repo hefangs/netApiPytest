@@ -116,9 +116,10 @@ pipeline {
         }
 
         always {
-            // 如果构建结果是 UNSTABLE，设置为 SUCCESS
-            if (currentBuild.result == 'UNSTABLE') {
-                currentBuild.result = 'SUCCESS'
+            script {
+                if (currentBuild.result == 'UNSTABLE') {
+                    currentBuild.result = 'SUCCESS'
+                }
             }
         }
     }
