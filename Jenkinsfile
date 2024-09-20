@@ -114,13 +114,5 @@ pipeline {
                       """,
                 mimeType: 'text/html'
         }
-
-        always {
-            script {
-                if (currentBuild.result == 'UNSTABLE') {
-                    currentBuild.result = 'SUCCESS'
-                }
-            }
-        }
     }
 }
