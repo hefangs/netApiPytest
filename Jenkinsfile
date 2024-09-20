@@ -31,7 +31,9 @@ pipeline {
         // } 
     }
     post {
-        unstable{currentBuild.result = 'SUCCESS'}
+        unstable {
+            currentBuild.result = 'SUCCESS'
+        }
 
         success{
              // 发布Allure报告到Jenkins的构建页面
