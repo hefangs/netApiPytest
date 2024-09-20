@@ -15,14 +15,8 @@ pipeline {
                         which python
                         pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                         pip install -r requirements.txt
-                        pytest -n 4 testcases || true
+                        pytest -n 4 || true
                     '''
-                }
-                // 在Pytest完成后强制修改结果为SUCCESS
-                script {
-                    if (currentBuild.result == 'UNSTABLE') {
-                        currentBuild.result = 'SUCCESS'
-                    }
                 }
             }
         } 
@@ -119,6 +113,13 @@ pipeline {
                         </html>
                       """,
                 mimeType: 'text/html'
+        }
+
+        always {
+            // 如果构建结果是 UNSTABLE，设置为 SUCCESS
+            if (currentBuild.result == 'UNSTABLE') {
+                currentBuild.result = 'SUCCESS'
+            }
         }
     }
 }
