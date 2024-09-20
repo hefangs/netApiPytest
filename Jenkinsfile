@@ -31,16 +31,6 @@ pipeline {
         // } 
     }
     post {
-         always {
-            script {
-                if (currentBuild.result == 'UNSTABLE') {
-                    mail to: 'he529564582@163.com',
-                        subject: "构建不稳定: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                        body: "构建完成，但有失败的测试用例。请检查报告。"
-                }
-            }
-        }
-
         success{
             allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
@@ -84,6 +74,7 @@ pipeline {
         }
         
         failure {
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
