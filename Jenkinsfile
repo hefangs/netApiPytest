@@ -32,7 +32,9 @@ pipeline {
     }
     post {
         unstable {
-            currentBuild.result = 'SUCCESS'
+            script {
+                currentBuild.result = 'SUCCESS'
+            }
         }
 
         success{
