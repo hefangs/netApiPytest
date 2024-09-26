@@ -1,24 +1,25 @@
 pipeline {
     agent any
     stages {
-        stage('Pytest Testcases') {   
-            steps {
-                withDockerContainer('python') {
-                    sh 'python -V'
-                    sh 'which python'
-                    sh 'pwd'
-                    sh 'ls'
-                    // 创建虚拟环境
-                    sh '''
-                        python -m venv venv
-                        . venv/bin/activate
-                        which python
-                        pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
-                        pip install -r requirements.txt
-                        rm -rf logs/*
-                        pytest -n 4 testcases || true
-                    '''
-                }
+        stage('Test Testcases') {   
+            agent {
+                docker { image 'python' }
+            }
+            steps('python') {
+                sh 'python -V'
+                sh 'which python'
+                sh 'pwd'
+                sh 'ls'
+                // 创建虚拟环境
+                sh '''
+                    python -m venv venv
+                    . venv/bin/activate
+                    which python
+                    pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+                    pip install -r requirements.txt
+                    rm -rf logs/*
+                    pytest -n 4 testcases || true
+                '''
             }
         } 
 
@@ -36,8 +37,8 @@ pipeline {
             // 发布 Allure 报告到 Jenkins 的构建页面
             allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
-                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                 body: """
+                subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: """
                         <!DOCTYPE html>
                         <html>
                             <head>
