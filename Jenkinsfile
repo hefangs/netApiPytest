@@ -26,11 +26,8 @@ pipeline {
         } 
     }
     post {
-        always{
-            // cleanWs()
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
-        }
         success{
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
@@ -72,6 +69,7 @@ pipeline {
         }
         
         failure {
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
