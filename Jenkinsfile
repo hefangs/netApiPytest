@@ -26,7 +26,7 @@ pipeline {
         } 
     post {
         always{
-            // allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
         success{
             mail to: 'he529564582@163.com',
