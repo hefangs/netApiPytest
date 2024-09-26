@@ -6,10 +6,10 @@ pipeline {
                 docker { image 'python' }
             }
             steps('python') {
-                sh 'python -V'
-                sh 'which python'
-                sh 'pwd'
-                sh 'ls'
+                // sh 'python -V'
+                // sh 'which python'
+                // sh 'pwd'
+                // sh 'ls'
                 // 创建虚拟环境
                 sh '''
                     python -m venv venv
