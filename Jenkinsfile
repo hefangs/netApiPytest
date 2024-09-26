@@ -1,11 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'python' }
+        customWorkspace '/var/jenkins_home/workspace/netApiPytest-ops'
+    }
     stages {
-        stage('Test Testcases') {   
-            agent {
-                docker { image 'python' }
-                customWorkspace '/var/jenkins_home/workspace/netApiPytest-ops'
-            }
+        stage('Test Testcases') {
             steps('python') {
                 // sh 'python -V'
                 // sh 'which python'
@@ -37,7 +36,7 @@ pipeline {
     post {
         success{
             // 发布 Allure 报告到 Jenkins 的构建页面
-            allure includeProperties: false, jdk: '', results: [[path: '${WORKSPACE}/temp']]
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
