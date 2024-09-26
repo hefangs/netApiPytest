@@ -24,7 +24,6 @@ pipeline {
                 '''
             }
         } 
-
         // stage('Generate Allure Report') {
         //     steps {
         //         withDockerContainer('frankescobar/allure-docker-service') {
