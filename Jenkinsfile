@@ -36,7 +36,7 @@ pipeline {
     post {
         always{
             cleanWs()
-            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
+            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
         success{
             mail to: 'he529564582@163.com',
