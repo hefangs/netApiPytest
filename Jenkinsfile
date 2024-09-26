@@ -6,7 +6,7 @@ pipeline {
                 docker { image 'python' }
             }
             steps('python') {
-                sh 'cd /var/jenkins_home/workspace/netApiPytest-ops'
+                // sh 'cd /var/jenkins_home/workspace/netApiPytest-ops'
                 // sh 'python -V'
                 // sh 'which python'
                 sh 'pwd'
