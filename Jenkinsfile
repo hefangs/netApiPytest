@@ -1,14 +1,19 @@
 pipeline {
     agent any
     stages {
+        stage('Clean Workspace') {
+            steps {
+                script {
+                    // 清理工作目录
+                    sh 'rm -rf *'
+                }
+            }
+        }
         stage('Test Testcases') {
             agent {
                 docker { image 'python' }
             }
             steps('python') {
-                // sh 'cd /var/jenkins_home/workspace/netApiPytest-ops'
-                // sh 'python -V'
-                // sh 'which python'
                 sh 'pwd'
                 sh 'ls'
                 // 创建虚拟环境
@@ -24,11 +29,19 @@ pipeline {
                     ls -al
                 '''
             }
+        }
+        stage('Generate Allure Report') {
+            agent {
+                docker { image 'frankescobar/allure-docker-service' }
+            }
+            steps('python') {
+                sh 'allure --version'
+                sh 'allure generate ./allure-results -o ./allure-report --clean'
+            }
         } 
     }
     post {
         success{
-            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
@@ -70,7 +83,6 @@ pipeline {
         }
         
         failure {
-            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
