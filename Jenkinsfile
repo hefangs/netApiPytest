@@ -1,10 +1,11 @@
 pipeline {
-    agent {
-        docker { image 'python' }
-        customWorkspace '/var/jenkins_home/workspace/netApiPytest-ops'
-    }
+    agent any
     stages {
         stage('Test Testcases') {
+            agent {
+                docker { image 'python' }
+                customWorkspace '/var/jenkins_home/workspace/netApiPytest-ops'
+            }
             steps('python') {
                 // sh 'python -V'
                 // sh 'which python'
@@ -74,7 +75,7 @@ pipeline {
                             </body>
                         </html>
                         """,
-                 mimeType: 'text/html'
+                mimeType: 'text/html'
         }
         
         failure {
@@ -114,7 +115,7 @@ pipeline {
                                 </table>  
                             </body>
                         </html>
-                      """,
+                    """,
                 mimeType: 'text/html'
         }
     }
