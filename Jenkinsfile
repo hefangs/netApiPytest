@@ -36,7 +36,7 @@ pipeline {
     post {
         success{
             // 发布 Allure 报告到 Jenkins 的构建页面
-            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
+            allure includeProperties: false, jdk: '', results: [[path: '${WORKSPACE}/temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
