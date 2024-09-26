@@ -24,15 +24,6 @@ pipeline {
                 '''
             }
         } 
-        // stage('Generate Allure Report') {
-        //     steps {
-        //         withDockerContainer('frankescobar/allure-docker-service') {
-        //             sh 'allure --version'
-                    // sh 'allure generate ./temp -o ./allure-report --clean'
-        //         }
-        //     }
-        // } 
-    }
     post {
         always{
             cleanWs()
