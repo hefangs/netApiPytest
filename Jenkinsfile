@@ -34,7 +34,7 @@ pipeline {
             agent {
                 docker { image 'frankescobar/allure-docker-service' }
             }
-            steps('python') {
+            steps('Allure') {
                 sh 'allure --version'
                 sh 'allure generate ./allure-results -o ./allure-report --clean'
             }
