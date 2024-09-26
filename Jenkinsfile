@@ -24,8 +24,10 @@ pipeline {
                 '''
             }
         } 
+    }
     post {
         always{
+            // cleanWs()
             allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
         }
         success{
