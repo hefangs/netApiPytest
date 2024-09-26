@@ -36,7 +36,7 @@ pipeline {
             }
             steps('Allure') {
                 sh 'allure --version'
-                sh 'allure generate ./allure-results -o ./allure-report --clean'
+                sh 'allure generate ./temp -o ./allure-report --clean'
             }
         } 
     }
@@ -69,8 +69,7 @@ pipeline {
                                                 <li>项目名称: ${env.JOB_NAME}</li>    
                                                 <li>构建编号: 第 ${BUILD_NUMBER} 次构建</li>            
                                                 <li>构建URL: <a href="${BUILD_URL}">${BUILD_URL}</a></li>
-                                                <li>测试报告:<a href="${BUILD_URL}execution/node/49/ws/allure-report/index.html">${BUILD_URL}execution/node/49/ws/allure-report/index.html</a></li>
-                                                <li>测试报告:<a href="${BUILD_URL}allure">${BUILD_URL}allure</a></li>
+                                                <li>测试报告:<a href="${BUILD_URL}execution/node/23/ws/allure-report/index.html">${BUILD_URL}allure</a></li>
                                                 <li>构建日志:<a href="${BUILD_URL}console">${BUILD_URL}console</a></li>
                                                 <li>最近提交: <a href="${BUILD_URL}changes">${BUILD_URL}changes</a</li>  
                                             </ul>    
