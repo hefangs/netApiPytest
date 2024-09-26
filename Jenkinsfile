@@ -19,6 +19,8 @@ pipeline {
                     pip install -r requirements.txt
                     rm -rf logs/*
                     pytest testcases/test_search/test_search.py
+                    pwd
+                    ls -al
                 '''
             }
         } 
@@ -35,7 +37,7 @@ pipeline {
     post {
         success{
             // 发布 Allure 报告到 Jenkins 的构建页面
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建成功: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
@@ -77,7 +79,7 @@ pipeline {
         }
         
         failure {
-            allure includeProperties: false, jdk: '', results: [[path: 'allure-results']]
+            allure includeProperties: false, jdk: '', results: [[path: 'temp']]
             mail to: 'he529564582@163.com',
                 subject: "构建失败: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
