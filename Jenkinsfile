@@ -4,6 +4,7 @@ pipeline {
         stage('Test Testcases') {   
             agent {
                 docker { image 'python' }
+                customWorkspace '/var/jenkins_home/workspace/netApiPytest-ops'
             }
             steps('python') {
                 // sh 'python -V'
