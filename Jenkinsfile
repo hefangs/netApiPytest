@@ -24,7 +24,7 @@ pipeline {
                     pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
                     pip install -r requirements.txt
                     rm -rf logs/*
-                    pytest testcases/test_other/test_other.py::TestOther::test_countries || true
+                     pytest testcases/test_playlist/test_playlist.py::TestPlayList::test_user_playlist || true
                     pwd
                     ls -al
                 '''
