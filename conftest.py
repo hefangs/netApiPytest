@@ -77,7 +77,7 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
     phone = 15000840699
     password = 'hf15000840699'
     md5_password = get_md5_hash(password)
-    params = {'phone': phone, 'password': md5_password}
+    params = {'phone': phone, 'md5_password': md5_password}
     try:
         res = session.get(url, params=params)
         res.raise_for_status()
