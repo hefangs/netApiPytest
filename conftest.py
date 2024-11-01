@@ -80,7 +80,7 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
 	params = {'phone': phone, 'md5_password': md5_password}
 	
 	try:
-		res = session.get(url, params=params)
+		res = session.post(url, params=params)
 		res.raise_for_status()
 	except RequestException as e:
 		pytest.fail(f"请求登录接口失败: {e}")
