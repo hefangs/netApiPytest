@@ -76,14 +76,10 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
     url = base_url + '/login/cellphone'
     phone = 15000840699
     password = 'hf15000840699'
-    # md5_password = get_md5_hash(password)
-    params = {'phone': phone, 'password': password}
-    headers = {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36',
-        'Accept': 'application/json, text/javascript, */*; q=0.01'
-    }
+    md5_password = get_md5_hash(password)
+    params = {'phone': phone, 'password': md5_password}
     try:
-        res = session.post(url, params=params,headers=headers)
+        res = session.get(url, params=params)
         res.raise_for_status()
     except RequestException as e:
         pytest.fail(f"请求登录接口失败: {e}")
