@@ -25,7 +25,7 @@ pipeline {
                     pip install -r requirements.txt
                     rm -rf logs/*
                     // pytest -n 4 testcases/ || true
-                    pytest testcases/test_artist/test_artist.py || true
+                    pytest testcases/test_other/test_other.py::TestOther::test_countries
                     pwd
                     ls -al
                 '''
