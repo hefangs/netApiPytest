@@ -83,7 +83,7 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
 		'Accept': 'application/json, text/javascript, */*; q=0.01'
 	}
 	try:
-		res = session.get(url, params=params)
+		res = session.get(url, params=params,headers=headers)
 		res.raise_for_status()
 	except RequestException as e:
 		pytest.fail(f"请求登录接口失败: {e}")
