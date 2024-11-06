@@ -41,6 +41,7 @@ pipeline {
         } 
     }
 
+
     post {
         success{
             mail to: 'he529564582@163.com',
