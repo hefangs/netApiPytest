@@ -81,6 +81,7 @@ def session(request: pytest.FixtureRequest) -> Generator[Session, None, None]:
     try:
         res = session.get(url, params=params)
         res.raise_for_status()
+        logger.info(f"登录接口响应: {res.json()}")
     except RequestException as e:
         pytest.fail(f"请求登录接口失败: {e}")
 
